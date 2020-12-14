@@ -1,0 +1,38 @@
+.footer {
+	background-color: #404146;
+	padding: 30px;
+}
+
+.bg-light {
+	color: white;
+}
+
+.footer h4 {
+	color: white !important;
+}
+
+.footer p,
+.footer a {
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 300;
+	letter-spacing: 0;
+	line-height: 22px;
+	opacity: 0.5;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+@media (max-width: 900px) {
+	.footer_desk {
+		display: none;
+	}
+	.footer {
+		padding: 10px;
+	}
+}
+@media (min-width: 900px) {
+	.footer_mob {
+		display: none;
+	}
+}

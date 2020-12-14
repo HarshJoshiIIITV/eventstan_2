@@ -1,0 +1,68 @@
+.header_createevent {
+	padding: 15px;
+	background-color: lightslategray;
+}
+.filter_buttons {
+	margin-top: 25px;
+}
+
+.filter_buttons Button {
+	margin-right: 10px;
+	background-color: lightslategray;
+}
+
+.create_event p {
+	color: black;
+}
+.cards_create_event {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 50px;
+}
+.cards_create_event h6 {
+	margin-top: 8px;
+}
+.cards_create_event .card_create_event {
+	margin: 10px;
+}
+.cards_create_event::after {
+	content: ' ';
+	flex: auto;
+}
+
+.card_create_event img {
+	border-radius: 10px;
+}
+
+.remove_anchor {
+	color: black !important ;
+	text-decoration: none !important;
+}
+
+.create_event input {
+	border-radius: 5px;
+	border: 0.5px solid grey;
+}
+
+@media (max-width: 500px) {
+	.create_event_mob1 {
+		flex-wrap: wrap;
+	}
+	.create_event_mob1 input {
+		margin: 15px 0px;
+	}
+	.filter_buttons {
+		flex-wrap: wrap;
+	}
+	.filter_buttons input {
+		margin-top: 12px;
+	}
+	.card_create_event img {
+		height: 130px !important;
+		width: 130px !important;
+	}
+	.create_event_mob1 Button {
+		margin-left: 0px !important;
+	}
+}

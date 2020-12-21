@@ -20,7 +20,7 @@ class Createevent extends Component {
         }
     }
     componentDidMount() {
-        axios.get('http://eventstan.com:3001/user/eventCategories').then((resp) => {
+        axios.get('https://eventstan.com:3001/user/eventCategories').then((resp) => {
             this.setState({
                 filters: resp.data.data
             })
@@ -28,7 +28,7 @@ class Createevent extends Component {
         }).catch((err) => {
             console.log('error')
         })
-        axios.get('http://eventstan.com:3001/user/event-types').then((resp) => {
+        axios.get('https://eventstan.com:3001/user/event-types').then((resp) => {
             this.setState({
                 event_types: resp.data.data.result
             })

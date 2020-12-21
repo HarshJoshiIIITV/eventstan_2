@@ -9,7 +9,7 @@ class PopUp extends Component {
         }
     }
     componentDidMount() {
-        axios.get(`http://eventstan.com:3001/user/event-form?eventTypeId=${this.props.state.target_event_id}`).then((resp) => {
+        axios.get(`https://eventstan.com:3001/user/event-form?eventTypeId=${this.props.state.target_event_id}`).then((resp) => {
             console.log()
             this.setState({
                 filters: resp.data.data.result.filters

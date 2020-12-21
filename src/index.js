@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './assets/campton/campton-book.ttf';
+import './assets/campton/campton-semibold.ttf';
+import './assets/campton/campton-light.ttf';
+import './assets/campton/campton-medium.ttf';
 
 ReactDOM.render(
   <React.StrictMode>

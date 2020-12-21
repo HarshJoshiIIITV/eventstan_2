@@ -1,9 +1,29 @@
 .client_section h2 {
+	color: #2d2d2d !important;
+}
+.client_section h3 {
 	color: black !important;
+}
+
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 350px;
+	z-index: 100;
+	background-color: #ededf1;
+	border-radius: 8px;
+	padding: 30px;
 }
 
 .client_section div {
 	padding: 30px;
+}
+
+.highlight {
+	background-color: #f47824 !important;
+	color: white !important;
 }
 
 .contact_container li {
@@ -25,6 +45,13 @@
 	list-style-type: none;
 	color: #2c2627;
 	cursor: pointer;
+}
+
+#abc1 label {
+	font-weight: bold !important;
+}
+#abc7 label {
+	font-weight: bold !important;
 }
 
 .contact_container li:active {

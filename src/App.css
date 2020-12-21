@@ -1,3 +1,11 @@
+.app {
+	font-family: campton !important;
+}
+
+.bold_me {
+	font-family: campton_bold !important;
+}
+
 h2,
 p {
 	color: white;
@@ -8,7 +16,6 @@ p {
 
 a.navbar-brand {
 	color: #fff;
-	font-family: 'Exotc350 Bd BT';
 	font-size: 32.5px;
 	font-weight: bold;
 	letter-spacing: 0;
@@ -16,6 +23,13 @@ a.navbar-brand {
 	text-transform: uppercase;
 }
 
+.who_we_are {
+	background-image: url('./assets/yellow_hover.png');
+	background-repeat: no-repeat;
+}
+.navbar-brand:hover {
+	color: white;
+}
 .navbar-brand {
 	display: inline-block;
 	padding-top: 0.3125rem;
@@ -24,18 +38,23 @@ a.navbar-brand {
 	font-size: 1.25rem;
 	line-height: inherit;
 	white-space: nowrap;
+	font-family: 'exotic';
+}
+#contact_abc label {
+	font-weight: bold !important;
+	color: #2d2d2d;
 }
 
 .banner-content {
 	margin: 0 auto;
-	padding: 150px 0 100px;
+	padding: 150px 0 50px;
 	text-align: center;
 	color: white;
 	max-width: 1140px;
 }
 
 .upper_part {
-	background-image: url(./assets/Home/banner_1.png);
+	background-image: url(./assets/desk_back.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -99,15 +118,15 @@ a.navbar-brand {
 	padding: 30px 20px;
 	border-radius: 10px;
 	box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.12);
-	height: 400px !important;
+	height: 420px !important;
 	margin: 20px;
 	display: block !important;
 }
 
 .card p {
 	color: black;
-	margin-top: 20px;
-	font-size: 15px;
+	margin-top: 15px;
+	font-size: 18px;
 }
 
 .joining-us-bg {
@@ -135,11 +154,14 @@ a.navbar-brand {
 }
 
 .space h3 {
-	font-size: 30px;
+	font-size: 16px;
+}
+.space p {
+	font-size: 16px;
 }
 
 .para3 .card {
-	height: 310px !important;
+	height: 330px !important;
 }
 
 .Contact_sec {
@@ -168,20 +190,17 @@ a.navbar-brand {
 	border-radius: 8px;
 	letter-spacing: 1px;
 	font-size: 16px;
-	font-family: 'Campton Book' !important;
 	height: 65px;
 }
 
 .Contact_sec form textarea {
 	padding: 20px;
-	font-family: 'Campton Book' !important;
 }
 
 .Contact_sec form .btn {
 	border: 1px solid #dcdcdc;
 	width: 100%;
 	font-size: 24px;
-	font-family: Campton;
 	padding: 15px 0px;
 	border-radius: 8px;
 	margin-bottom: 100px !important;
@@ -190,12 +209,15 @@ a.navbar-brand {
 }
 
 @media (max-width: 500px) {
-	.mob Button {
+	.upper_part Button {
 		margin-top: 20px;
 		text-align: center;
 	}
 	.mob {
 		flex-wrap: wrap;
+	}
+	.button_homepage {
+		font-size: 14px !important;
 	}
 	.Contact_sec {
 		margin-top: 30px !important;
@@ -206,21 +228,14 @@ a.navbar-brand {
 	.cardy {
 		height: 300px !important;
 	}
-	.mob div {
-		flex-wrap: wrap;
+	.upper_part {
+		background-image: url(./assets/mob_back.png);
 	}
-	.mob input {
-		margin-left: 0px !important;
-		width: 127px !important;
+	a.navbar-brand {
+		font-size: 18px;
 	}
-	.mob .navbar-brand {
-		font-size: 28px;
-	}
-	.mob_become_p {
-		margin-top: 10px;
-	}
-	.banner-content {
-		padding-top: 50px !important;
+	.mob_head_2 {
+		font-size: 20px;
 	}
 }
 

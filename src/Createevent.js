@@ -2,9 +2,46 @@ import React, { Component } from 'react';
 import { Row, Col, Container, Button } from 'react-bootstrap'
 import './Createevent.css';
 import card_pic from './assets/create_event/card.jpg'
+import PopUp from './PopUp'
+import Name_popup from './Name_popup'
+import Backdrop from './Backdrop/Backdrop';
 
 class Createevent extends Component {
+    constructor() {
+        super();
+        this.state = {
+            popup_first: false,
+            popup: false,
+            title: ''
+        }
+    }
+    toogle_popup = () => {
+        this.setState({
+            popup_first: !this.state.popup_first
+        })
+    }
+    submit_popup_first = () => {
+        this.setState({
+            popup_first: false,
+            popup: true,
+        })
+    }
+    onchange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+    backdropCLickHandler = () => {
+        this.setState({
+            popup_first: false,
+            popup: false
+        });
+    }
     render() {
+        let backdrop;
+        if (this.state.popup || this.state.popup_first) {
+            backdrop = <Backdrop click={this.backdropCLickHandler} />;
+        }
         return (
             <div className="create_event">
                 <div className="header_createevent">
@@ -16,7 +53,7 @@ class Createevent extends Component {
                         <Col xs={0} md={2} />
                         <Col xs={12} md={7} >
                             <div className="create_event_mob1" style={{ display: 'flex', justifyContent: 'center' }}>
-                                <input type="text" placeholder="Search here.." />
+                                <input style={{ padding: '8px 8px', width: '250px', border: 'none', borderRadius: '8px' }} type="text" placeholder="Search here.." />
                                 <Button href="/professional" style={{ backgroundColor: "#F47824", marginLeft: '20px' }}>Request for Demo</Button>
                                 <Button href="/professional" style={{ backgroundColor: "#F47824", marginLeft: '20px' }}>Menu</Button>
 
@@ -27,9 +64,9 @@ class Createevent extends Component {
                 <br />
                 <br />
                 <Container>
-                    <p ><a className="remove_anchor" href="/">BACK</a></p>
-                    <h4>Select the Event type to</h4>
-                    <h4>Hire a Professional</h4>
+                    <p style={{ marginBottom: '5px' }}><a className="remove_anchor bold_me" href="/"><span style={{ fontSize: '24px', fontWeight: 'bold', paddingRight: '5px' }}>&lt;</span>  BACK</a></p>
+                    <h4 style={{ marginBottom: '1px' }} className="bold_me">Select the Event type to</h4>
+                    <h4 className="bold_me">Hire a Professional</h4>
                     <div className="filter_buttons" style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
                             <Button  >All</Button>
@@ -43,7 +80,7 @@ class Createevent extends Component {
                     </div>
                     <br />
                     <div className="cards_create_event">
-                        <div className="card_create_event">
+                        <div onClick={this.toogle_popup} className="card_create_event">
                             <img src={card_pic} height="150px" width='150px' />
                             <h6>Birthdays</h6>
                         </div>
@@ -103,11 +140,17 @@ class Createevent extends Component {
                             <img src={card_pic} height="150px" width='150px' />
                             <h6>Birthdays</h6>
                         </div>
-
                     </div>
 
 
                 </Container>
+                {this.state.popup_first ?
+                    < Name_popup submit_popup_first={this.submit_popup_first} onchange={this.onchange} />
+                    : null}
+                {this.state.popup ?
+                    <PopUp state={this.state} />
+                    : null}
+                {backdrop}
             </div >
         )
     }

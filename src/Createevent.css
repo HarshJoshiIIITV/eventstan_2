@@ -3,12 +3,53 @@
 	background-color: lightslategray;
 }
 .filter_buttons {
-	margin-top: 25px;
+	margin-top: 20px;
 }
 
 .filter_buttons Button {
 	margin-right: 10px;
 	background-color: lightslategray;
+}
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 700px;
+	z-index: 100;
+	background-color: white;
+	border-radius: 8px;
+	padding: 20px;
+}
+.create_event_popup input {
+	border: 1px solid silver;
+	border-radius: 8px;
+	padding: 8px 8px;
+	width: 250px;
+}
+.create_event_popup {
+	padding-top: 20px;
+}
+.create_event_popup Button {
+	background-color: lightslategray;
+}
+.popup_name {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 350px;
+	z-index: 100;
+	background-color: white;
+	border-radius: 8px;
+	padding: 30px 15px 10px 15px;
+}
+.popup h6 {
+	font-size: 16px;
+}
+
+.popup div {
+	margin: 5px;
 }
 
 .create_event p {
@@ -17,14 +58,14 @@
 .cards_create_event {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: left;
 	margin-bottom: 50px;
 }
 .cards_create_event h6 {
 	margin-top: 8px;
 }
 .cards_create_event .card_create_event {
-	margin: 10px;
+	margin: 15px;
 }
 .cards_create_event::after {
 	content: ' ';
@@ -40,9 +81,11 @@
 	text-decoration: none !important;
 }
 
-.create_event input {
-	border-radius: 5px;
-	border: 0.5px solid grey;
+.filter_buttons input {
+	border-radius: 8px;
+	border: 0.5px solid silver;
+	padding: 8px 8px;
+	width: 250px;
 }
 
 @media (max-width: 500px) {
@@ -64,5 +107,12 @@
 	}
 	.create_event_mob1 Button {
 		margin-left: 0px !important;
+	}
+	.popup {
+		width: 333px;
+		padding: 5px;
+	}
+	.create_event_popup {
+		padding-top: 5px;
 	}
 }

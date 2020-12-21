@@ -5,6 +5,7 @@ import card_pic from './assets/create_event/card.jpg'
 import PopUp from './PopUp'
 import Name_popup from './Name_popup'
 import Backdrop from './Backdrop/Backdrop';
+import axios from 'axios';
 
 class Createevent extends Component {
     constructor() {
@@ -12,12 +13,35 @@ class Createevent extends Component {
         this.state = {
             popup_first: false,
             popup: false,
-            title: ''
+            title: '',
+            filters: null,
+            event_types: null,
+            target_event_id: null
         }
     }
-    toogle_popup = () => {
+    componentDidMount() {
+        axios.get('http://eventstan.com:3001/user/eventCategories').then((resp) => {
+            this.setState({
+                filters: resp.data.data
+            })
+            // console.log(resp.data.data[0].name);
+        }).catch((err) => {
+            console.log('error')
+        })
+        axios.get('http://eventstan.com:3001/user/event-types').then((resp) => {
+            this.setState({
+                event_types: resp.data.data.result
+            })
+        }).catch((err) => {
+            console.log('error')
+        })
+
+    }
+    toogle_popup = (id) => {
+        console.log(id)
         this.setState({
-            popup_first: !this.state.popup_first
+            popup_first: !this.state.popup_first,
+            target_event_id: id
         })
     }
     submit_popup_first = () => {
@@ -70,9 +94,11 @@ class Createevent extends Component {
                     <div className="filter_buttons" style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
                             <Button  >All</Button>
-                            <Button  >Private</Button>
-                            <Button  >Corporate</Button>
-                            <Button  >Virtual</Button>
+                            {
+                                this.state.filters && this.state.filters.map((filter) => {
+                                    return <Button>{filter.name}</Button>
+                                })
+                            }
                         </div>
                         <div>
                             <input placeholder="Search here.." type="text" />
@@ -80,66 +106,17 @@ class Createevent extends Component {
                     </div>
                     <br />
                     <div className="cards_create_event">
-                        <div onClick={this.toogle_popup} className="card_create_event">
-                            <img src={card_pic} height="150px" width='150px' />
-                            <h6>Birthdays</h6>
-                        </div>
-                        <div className="card_create_event">
-                            <img src={card_pic} height="150px" width='150px' />
-                            <h6>Birthdays</h6>
-                        </div>
-                        <div className="card_create_event">
-                            <img src={card_pic} height="150px" width='150px' />
-                            <h6>Birthdays</h6>
-                        </div>
-                        <div className="card_create_event">
-                            <img src={card_pic} height="150px" width='150px' />
-                            <h6>Birthdays</h6>
-                        </div>
-                        <div className="card_create_event">
-                            <img src={card_pic} height="150px" width='150px' />
-                            <h6>Birthdays</h6>
-                        </div>
-                        <div className="card_create_event">
-                            <img src={card_pic} height="150px" width='150px' />
-                            <h6>Birthdays</h6>
-                        </div>
-                        <div className="card_create_event">
-                            <img src={card_pic} height="150px" width='150px' />
-                            <h6>Birthdays</h6>
-                        </div>
-                        <div className="card_create_event">
-                            <img src={card_pic} height="150px" width='150px' />
-                            <h6>Birthdays</h6>
-                        </div>
-                        <div className="card_create_event">
-                            <img src={card_pic} height="150px" width='150px' />
-                            <h6>Birthdays</h6>
-                        </div>
-                        <div className="card_create_event">
-                            <img src={card_pic} height="150px" width='150px' />
-                            <h6>Birthdays</h6>
-                        </div>
-                        <div className="card_create_event">
-                            <img src={card_pic} height="150px" width='150px' />
-                            <h6>Birthdays</h6>
-                        </div>
-                        <div className="card_create_event">
-                            <img src={card_pic} height="150px" width='150px' />
-                            <h6>Birthdays</h6>
-                        </div>
-                        <div className="card_create_event">
-                            <img src={card_pic} height="150px" width='150px' />
-                            <h6>Birthdays</h6>
-                        </div>
-                        <div className="card_create_event">
-                            <img src={card_pic} height="150px" width='150px' />
-                            <h6>Birthdays</h6>
-                        </div>
-                        <div className="card_create_event">
-                            <img src={card_pic} height="150px" width='150px' />
-                            <h6>Birthdays</h6>
-                        </div>
+                        {
+                            this.state.event_types && this.state.event_types.map((single_event) => {
+
+                                return (
+                                    <div onClick={() => this.toogle_popup(single_event._id)} className="card_create_event">
+                                        <img src={card_pic} height="150px" width='150px' />
+                                        <h6>{single_event.name}</h6>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
 
 

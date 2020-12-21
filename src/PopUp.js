@@ -1,14 +1,40 @@
 import React, { Component } from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
+import axios from 'axios';
 class PopUp extends Component {
     constructor() {
         super();
+        this.state = {
+            filters: null
+        }
+    }
+    componentDidMount() {
+        axios.get(`http://eventstan.com:3001/user/event-form?eventTypeId=${this.props.state.target_event_id}`).then((resp) => {
+            console.log()
+            this.setState({
+                filters: resp.data.data.result.filters
+            })
+        })
+
     }
     render() {
         return (
             <div className="popup">
                 <h3 style={{ textAlign: 'center', padding: '10px', borderBottom: '0.5px solid silver' }}>{this.props.state.title}</h3>
                 <Row className="create_event_popup">
+                    {/* {
+                        this.state.filters && this.state.filters.map((filter) => {
+                            if (filter.name == 'Select Time Range')
+                                return <div>
+                                    <h6>Select Time</h6>
+                                    <div style={{ display: 'flex', justifyContent: 'left' }}>
+                                        <input style={{ width: '120px' }} type="time" id="appt" name="appt" />
+                                        <input style={{ marginLeft: '10px', width: '120px' }} type="time" id="appt" name="appt" />
+                                    </div>
+                                </div>
+                        })
+                    } */}
+
                     <Col>
                         <div>
                             <h6>Where will your event take place?</h6>
@@ -38,11 +64,14 @@ class PopUp extends Component {
                         </div>
                     </Col>
                     <Col>
-                        <h6>Select Date</h6>
-                        <div style={{ display: 'flex', justifyContent: 'left' }}>
-                            <input style={{ width: '120px' }} type="time" id="appt" name="appt" />
-                            <input style={{ marginLeft: '10px', width: '120px' }} type="time" id="appt" name="appt" />
+                        <div>
+                            <h6>Select Time</h6>
+                            <div style={{ display: 'flex', justifyContent: 'left' }}>
+                                <input style={{ width: '120px' }} type="time" id="appt" name="appt" />
+                                <input style={{ marginLeft: '10px', width: '120px' }} type="time" id="appt" name="appt" />
+                            </div>
                         </div>
+
                     </Col>
                 </Row>
                 <Row>

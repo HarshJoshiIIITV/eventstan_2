@@ -65,7 +65,7 @@ class Createevent extends Component {
 
     handleKeyPress = (event) => {
         if (event.key === 'Enter') {
-            axios.get(`http://eventstan.com:3001/user/event-types?search=${this.state.search_input}`).then((resp) => {
+            axios.get(`https://api.eventstan.com/user/event-types?search=${this.state.search_input}`).then((resp) => {
                 this.setState({
                     event_types: resp.data.data.result
                 })

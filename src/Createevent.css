@@ -88,6 +88,13 @@
 	width: 250px;
 }
 
+.data_not_found {
+	text-align: center;
+	width: 100%;
+	padding: 100px;
+	color: rgb(244, 120, 36);
+}
+
 @media (max-width: 500px) {
 	.create_event_mob1 {
 		flex-wrap: wrap;
@@ -114,5 +121,9 @@
 	}
 	.create_event_popup {
 		padding-top: 5px;
+	}
+	.data_not_found {
+		font-size: 32px;
+		padding: 10px;
 	}
 }

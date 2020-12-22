@@ -127,15 +127,16 @@ class Createevent extends Component {
                     <br />
                     <div className="cards_create_event">
                         {
-                            this.state.event_types && this.state.event_types.map((single_event) => {
-
-                                return (
-                                    <div onClick={() => this.toogle_popup(single_event._id)} className="card_create_event">
-                                        <img src={card_pic} height="150px" width='150px' />
-                                        <h6>{single_event.name}</h6>
-                                    </div>
-                                )
-                            })
+                            (this.state.event_types == null || this.state.event_types.length == 0) ?
+                                <h1 className="data_not_found">No Match Found!</h1>
+                                : this.state.event_types.map((single_event) => {
+                                    return (
+                                        <div onClick={() => this.toogle_popup(single_event._id)} className="card_create_event">
+                                            <img src={card_pic} height="150px" width='150px' />
+                                            <h6>{single_event.name}</h6>
+                                        </div>
+                                    )
+                                })
                         }
                     </div>
 

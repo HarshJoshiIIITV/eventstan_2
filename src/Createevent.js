@@ -16,7 +16,8 @@ class Createevent extends Component {
             title: '',
             filters: null,
             event_types: null,
-            target_event_id: null
+            target_event_id: null,
+            search_input: ''
         }
     }
     componentDidMount() {
@@ -61,6 +62,25 @@ class Createevent extends Component {
             popup: false
         });
     }
+
+    handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            axios.get(`http://eventstan.com:3001/user/event-types?search=${this.state.search_input}`).then((resp) => {
+                this.setState({
+                    event_types: resp.data.data.result
+                })
+            }).catch((err) => {
+                console.log('error');
+            })
+        }
+    }
+
+    search_change = (e) => {
+        this.setState({
+            search_input: e.target.value
+        })
+    }
+
     render() {
         let backdrop;
         if (this.state.popup || this.state.popup_first) {
@@ -101,7 +121,7 @@ class Createevent extends Component {
                             }
                         </div>
                         <div>
-                            <input placeholder="Search here.." type="text" />
+                            <input placeholder="Search here.." onChange={this.search_change} onKeyPress={this.handleKeyPress} type="text" />
                         </div>
                     </div>
                     <br />

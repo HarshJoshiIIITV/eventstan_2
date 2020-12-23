@@ -46,7 +46,7 @@ class PopUp extends Component {
         };
         this.setState({
           filters: resp.data.data.result.filters,
-          form_resp: { ...x, filters: [resp.data.data.result.filters.count] },
+          form_resp: x,
         });
       });
   }

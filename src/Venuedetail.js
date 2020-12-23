@@ -21,6 +21,7 @@ class Venuedetail extends Component {
         `https://api.eventstan.com/user/event-filters?eventTypeId=${this.props.match.params.eventTypeId}&userEventId=${this.props.match.params.userEventId}`
       )
       .then((res) => {
+        console.log(res.data.data);
         this.setState({
           filters: res.data.data.filters,
           addOns: res.data.data.result.addOns,

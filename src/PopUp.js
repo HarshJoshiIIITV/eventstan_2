@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import axios from "axios";
+import { Range } from "rc-slider";
+import "rc-slider/assets/index.css";
+import { withRouter } from "react-router-dom";
 
 class PopUp extends Component {
   constructor() {
@@ -10,20 +13,7 @@ class PopUp extends Component {
       form_resp: {
         eventTypeId: "",
         userId: "3",
-        filters: [
-          //   {
-          //     "filterId": "5fdc621a0f6f510e2790165b",
-          //     "type": 6,
-          //     "startTime":  "11:11:00",
-          //       "endTime" :  "12:12:00"
-          //   },
-          // {
-          //     "filterId": "5fdc621a0f6f510e2790165b",
-          //     "type": 6,
-          //     "startTime":  "11:11:00",
-          //       "endTime" :  "12:12:00"
-          //   }
-        ],
+        filters: [],
       },
       startTime: "",
       endTime: "",
@@ -31,6 +21,8 @@ class PopUp extends Component {
       date: "",
       startDate: "",
       endDate: "",
+      minPeople: 0,
+      maxPeople: 0,
     };
   }
   componentDidMount() {
@@ -90,7 +82,9 @@ class PopUp extends Component {
           filters: filt,
         })
         .then((r) => {
-          console.log(r);
+          this.props.history.push(
+            "/venuedetail/" + r.data.data.eventTypeId + "/" + r.data.data._id
+          );
         });
     });
   };
@@ -140,21 +134,25 @@ class PopUp extends Component {
                   </Col>
                 );
               }
-
-              // else if (filter.type == 7) {
-              //     return (
-              //         <Col>
-              //             <h6>Number of Person's Range</h6>
-              //             <select autoComplete="nope" required >
-              //                 <option value="">Select</option>
-              //                 <option value="1-20">1-20</option>
-              //                 <option value="20-50">20-50</option>
-              //                 <option value="50-100">50-100</option>
-              //             </select>
-
-              //         </Col>
-              //     )
-              // }
+              if (filter.type == 7) {
+                return (
+                  <Col>
+                    <h6>Number of Person's Range</h6>
+                    <Range
+                      min={this.state.minPeople}
+                      max={this.state.maxPeople}
+                      defaultValue={[3, 10]}
+                      tipFormatter={(value) => `${value}%`}
+                      onBeforeChange={(value) =>
+                        this.setState({ minPeople: value })
+                      }
+                      onAfterChange={(value) =>
+                        this.setState({ maxPeople: value })
+                      }
+                    />
+                  </Col>
+                );
+              }
               // else if (filter.type == 8) {
               //     return (
               //         <Col>
@@ -170,7 +168,7 @@ class PopUp extends Component {
               //         </Col>
               //     )
               // }
-              else if (filter.type == 5) {
+              if (filter.type == 5) {
                 return (
                   <Col>
                     <div>
@@ -190,7 +188,8 @@ class PopUp extends Component {
                     </div>
                   </Col>
                 );
-              } else if (filter.type == 3) {
+              }
+              if (filter.type == 3) {
                 <Col>
                   <div>
                     <h6>Select Date</h6>
@@ -201,7 +200,8 @@ class PopUp extends Component {
                     />
                   </div>
                 </Col>;
-              } else if (filter.type == 4) {
+              }
+              if (filter.type == 4) {
                 <Col>
                   <div>
                     <h6>Date range</h6>
@@ -266,4 +266,4 @@ class PopUp extends Component {
     );
   }
 }
-export default PopUp;
+export default withRouter(PopUp);

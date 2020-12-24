@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="20px" viewBox="0 0 16 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>location</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Birthday" transform="translate(-995.000000, -274.000000)">
+            <g id="location" transform="translate(995.000000, 274.000000)">
+                <path d="M8,0.5 C9.91941738,0.5 11.8388348,1.23223305 13.3033009,2.69669914 C14.767767,4.16116524 15.5,6.08058262 15.5,8 C15.5,9.91941738 14.767767,11.8388348 13.3033009,13.3033009 L13.3033009,13.3033009 L8,18.6066017 L2.69669914,13.3033009 C1.23223305,11.8388348 0.5,9.91941738 0.5,8 C0.5,6.08058262 1.23223305,4.16116524 2.69669914,2.69669914 C4.16116524,1.23223305 6.08058262,0.5 8,0.5 Z" id="Rectangle" stroke="#8489B2"></path>
+                <circle id="Oval" fill="#8489B2" cx="8" cy="8" r="3"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>cross</title>
+    <defs>
+        <filter x="-46.2%" y="-46.2%" width="192.3%" height="192.3%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Login" transform="translate(-895.000000, -142.000000)">
+            <g id="cross" filter="url(#filter-1)" transform="translate(904.000000, 151.000000)">
+                <circle id="Oval-7" fill="#F6F6F6" cx="13" cy="13" r="13"></circle>
+                <g id="Group" transform="translate(3.250000, 4.875000)" stroke="#424242" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.625">
+                    <g id="ic_cross" transform="translate(9.750000, 8.125000) rotate(-315.000000) translate(-9.750000, -8.125000) translate(3.250000, 1.625000)">
+                        <line x1="6.5" y1="0" x2="6.5" y2="13" id="Line"></line>
+                        <line x1="0" y1="6.5" x2="13" y2="6.5" id="Line-Copy"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

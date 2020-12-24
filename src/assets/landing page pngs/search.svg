@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="20px" viewBox="0 0 21 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>search</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="search">
+            <g id="Group-217" transform="translate(2.000000, 1.000000)">
+                <path d="M10.6566524,2.55166364 C13.0528429,4.97348182 13.0528429,8.89993636 10.6566524,11.3217545 C8.26127143,13.7427545 4.37636667,13.7427545 1.98017619,11.3217545 C-0.416014286,8.89993636 -0.416014286,4.97348182 1.98017619,2.55166364 C4.37636667,0.130663636 8.26127143,0.130663636 10.6566524,2.55166364 Z" id="Stroke-211" stroke="#F47824" stroke-width="1.35" stroke-linecap="round"></path>
+                <g id="Group-216" transform="translate(10.523810, 11.454545)">
+                    <line x1="0.395695238" y1="0.176972727" x2="5.3038381" y2="5.13760909" id="Fill-213" fill="#666666"></line>
+                    <line x1="1.98234445" y1="1.78059145" x2="5.3038381" y2="5.13760909" id="Stroke-215" stroke="#F47824" stroke-width="1.35" stroke-linecap="round"></line>
+                </g>
+            </g>
+            <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
+        </g>
+    </g>
+</svg>

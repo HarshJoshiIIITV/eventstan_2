@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>placeholder - profile  3</title>
+    <defs>
+        <circle id="path-1" cx="35" cy="35" r="35"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="placeholder---profile--3">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#DCDCDC" xlink:href="#path-1"></use>
+            <circle id="Oval" fill="#9B9B9B" mask="url(#mask-2)" cx="35" cy="23.3333333" r="11.6666667"></circle>
+            <circle id="Oval-Copy-10" fill="#9B9B9B" mask="url(#mask-2)" cx="35" cy="61.25" r="23.3333333"></circle>
+        </g>
+    </g>
+</svg>

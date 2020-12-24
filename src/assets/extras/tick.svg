@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>tick</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Listing-2.0" transform="translate(-1262.000000, -173.000000)" stroke="#FFFFFF" stroke-width="2">
+            <g id="tick" transform="translate(1263.000000, 174.000000)">
+                <circle id="Oval" fill="#F47824" cx="11" cy="11" r="11"></circle>
+                <polyline id="Shape" stroke-linecap="round" stroke-linejoin="round" transform="translate(9.656854, 8.656854) rotate(-315.000000) translate(-9.656854, -8.656854) " points="13.6568542 4.65685425 13.6568542 12.6568542 9.81340059 12.6568542"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

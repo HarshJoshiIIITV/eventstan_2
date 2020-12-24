@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="84px" height="84px" viewBox="0 0 84 84" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>play video</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-8">
+            <circle id="Oval-Copy-3" fill="#FBF9FA" fill-rule="nonzero" opacity="0.200000003" cx="42" cy="42" r="40"></circle>
+            <circle id="Oval-Copy-6" opacity="0.200000003" fill-rule="nonzero" cx="42" cy="42" r="42"></circle>
+            <circle id="Oval" fill="#FBF9FA" fill-rule="nonzero" opacity="0.900000036" cx="42" cy="42" r="28"></circle>
+            <path d="M39.4053675,30.8374645 L53.097435,40.4682792 C54.0008939,41.10376 54.2181331,42.3513171 53.5826524,43.254776 C53.4500746,43.4432609 53.2859199,43.6074156 53.097435,43.7399933 L39.4053675,53.370808 C38.5019086,54.0062888 37.2543515,53.7890496 36.6188708,52.8855907 C36.3819006,52.5486917 36.2547278,52.1468439 36.2547278,51.734951 L36.2547278,32.4733216 C36.2547278,31.3687521 37.1501583,30.4733216 38.2547278,30.4733216 C38.6666208,30.4733216 39.0684685,30.6004944 39.4053675,30.8374645 Z" id="Rectangle" fill="#F47824"></path>
+        </g>
+    </g>
+</svg>

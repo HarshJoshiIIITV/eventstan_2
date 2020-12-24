@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="22px" viewBox="0 0 20 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>calendar</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Birthday" transform="translate(-668.000000, -465.000000)">
+            <g id="calendar" transform="translate(668.000000, 466.000000)">
+                <g id="ic_home" transform="translate(0.000000, 2.500000)" stroke="#8489B2">
+                    <path d="M17.5074247,0.5 C18.0574544,0.5 18.5552966,0.724240713 18.9156501,1.08672629 C19.2768986,1.45011222 19.5,1.95231213 19.5,2.50732332 L19.5,2.50732332 L19.5,14.9926767 C19.5,15.5470888 19.2763879,16.0491143 18.915066,16.412574 C18.5545103,16.7752631 18.056685,17 17.5074247,17 L17.5074247,17 L2.49257535,17 C1.94254561,17 1.44470337,16.7757593 1.08434993,16.4132737 C0.723101416,16.0498878 0.5,15.5476879 0.5,14.9926767 L0.5,14.9926767 L0.5,2.50732332 C0.5,1.95291123 0.723612091,1.45088572 1.08493399,1.08742596 C1.44548975,0.724736884 1.94331497,0.5 2.49257535,0.5 L2.49257535,0.5 Z" id="Rectangle-1"></path>
+                    <line x1="8.75" y1="10" x2="3.75" y2="10" id="Rectangle-1" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></line>
+                    <line x1="12.5" y1="13.75" x2="3.75" y2="13.75" id="Rectangle-1-Copy" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"></line>
+                </g>
+                <rect id="Rectangle" stroke="#FFFFFF" fill="#8489B2" x="3.75" y="0" width="2.5" height="5" rx="1.25"></rect>
+                <rect id="Rectangle-Copy-4" stroke="#FFFFFF" fill="#8489B2" x="13.75" y="0" width="2.5" height="5" rx="1.25"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

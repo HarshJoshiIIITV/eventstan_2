@@ -6,6 +6,7 @@ import PopUp from './PopUp'
 import Name_popup from './Name_popup'
 import Backdrop from './Backdrop/Backdrop';
 import axios from 'axios';
+import search_ico from './assets/landing page pngs/search.svg'
 
 class Createevent extends Component {
     constructor() {
@@ -97,7 +98,10 @@ class Createevent extends Component {
                         <Col xs={0} md={2} />
                         <Col xs={12} md={7} >
                             <div className="create_event_mob1" style={{ display: 'flex', justifyContent: 'center' }}>
-                                <input style={{ padding: '8px 8px', width: '250px', border: 'none', borderRadius: '8px' }} type="text" placeholder="Search here.." />
+                                <div style={{ position: 'relative' }}>
+                                    <input style={{ padding: '8px 8px', width: '250px', border: 'none', borderRadius: '8px', paddingRight: '30px' }} type="text" placeholder="Search here.." />
+                                    <img style={{ position: 'absolute', right: '3px', height: '20px', top: '10px' }} src={search_ico} height="50px" />
+                                </div>
                                 <Button href="/professional" style={{ backgroundColor: "#F47824", marginLeft: '20px' }}>Request for Demo</Button>
                                 <Button href="/professional" style={{ backgroundColor: "#F47824", marginLeft: '20px' }}>Menu</Button>
 
@@ -120,8 +124,10 @@ class Createevent extends Component {
                                 })
                             }
                         </div>
-                        <div>
-                            <input placeholder="Search here.." onChange={this.search_change} onKeyPress={this.handleKeyPress} type="text" />
+                        <div style={{ position: 'relative' }}>
+                            <input style={{ padding: '8px 8px', borderRadius: '8px', paddingRight: '30px' }} placeholder="Search here.." onChange={this.search_change} onKeyPress={this.handleKeyPress} type="text" />
+                            <img style={{ position: 'absolute', right: '3px', height: '20px', top: '10px' }} src={search_ico} height="50px" />
+
                         </div>
                     </div>
                     <br />

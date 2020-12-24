@@ -17,9 +17,11 @@ import { Component } from 'react';
 import axios from 'axios';
 import Backdrop from './Backdrop/Backdrop';
 import PopUp_contact from './PopUp_contact'
-
+import { Link } from 'react-router-dom'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import event_success from './assets/extras/event success.svg'
+import hire_pro from './assets/landing page pngs/hire pro.svg'
 
 class Home extends Component {
     constructor() {
@@ -132,8 +134,8 @@ class Home extends Component {
                         <p className="banner-text">EVENTSTAN is where all your personal and corporate event needs meet under one roof. You choose, and we deliver.</p>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <Button className="button_homepage" href="/create_event" style={{ backgroundColor: "white", color: 'black', padding: '10px 20px' }}>Create an event</Button>
-                        <Button className="button_homepage" href="" style={{ backgroundColor: "white", color: 'black', padding: '10px 20px', marginLeft: '20px' }}>Hire Professional</Button>
+                        <Link to="/create_event"><Button className="button_homepage" style={{ backgroundColor: "white", color: 'black', padding: '0px 20px' }}><img src={event_success} height="50px" />Create an event</Button></Link>
+                        <Button className="button_homepage" href="" style={{ backgroundColor: "white", color: 'black', padding: '0px 20px', marginLeft: '20px' }}><img src={hire_pro} height="40px" />Hire Professional</Button>
 
 
                     </div>

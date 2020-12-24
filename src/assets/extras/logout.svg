@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>logout</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="My-Profile" transform="translate(-160.000000, -452.000000)">
+            <g id="logout" transform="translate(160.000000, 452.000000)">
+                <rect id="Rectangle-Copy-6" fill="#F96F6F" x="0" y="0" width="32" height="32" rx="8"></rect>
+                <g id="Group-4" transform="translate(18.000000, 16.500000) rotate(-270.000000) translate(-18.000000, -16.500000) translate(10.500000, 7.500000)">
+                    <g id="ic_logout" transform="translate(7.407754, 9.090909) rotate(-90.000000) translate(-7.407754, -9.090909) translate(-1.092246, 2.090909)">
+                        <path d="M9.81818182,-1.77635684e-15 C10.7219205,-2.16441555e-15 11.4545455,0.732624955 11.4545455,1.63636364 L11.454,5.576 L6.79883291,5.5763217 C6.28599707,5.5763217 5.86332575,5.96236189 5.80556064,6.45970057 L5.79883291,6.5763217 C5.79883291,7.12860645 6.24654816,7.5763217 6.79883291,7.5763217 L6.79883291,7.5763217 L11.454,7.576 L11.4545455,11.4545455 C11.4545455,12.3582841 10.7219205,13.0909091 9.81818182,13.0909091 L1.63636364,13.0909091 C0.732624955,13.0909091 1.57949108e-15,12.3582841 0,11.4545455 L0,1.63636364 C1.11368537e-16,0.732624955 0.732624955,-9.44208922e-16 1.63636364,-1.77635684e-15 L9.81818182,-1.77635684e-15 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                        <line x1="6.95454545" y1="6.54545455" x2="15.9545455" y2="6.54545455" id="Line" stroke="#FFFFFF" stroke-width="0.818181818" stroke-linecap="round" stroke-linejoin="round"></line>
+                        <polyline id="Rectangle-2" stroke="#FFFFFF" stroke-width="0.818181818" stroke-linecap="round" stroke-linejoin="round" transform="translate(14.118278, 6.562081) rotate(-315.000000) translate(-14.118278, -6.562081) " points="12.4819145 4.92571772 15.7546417 4.92571772 15.7546417 8.19844499"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>edit</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Guest-selected" transform="translate(-1267.000000, -685.000000)">
+            <g id="edit" transform="translate(1268.000000, 686.000000)">
+                <circle id="Oval" stroke="#F7F7F7" fill="#572848" cx="10" cy="10" r="10"></circle>
+                <g id="Group-2" transform="translate(2.500000, 2.500000)" fill="#F47824">
+                    <g id="edit-copy" transform="translate(0.375000, 0.375000)">
+                        <g id="Group" transform="translate(0.738462, 0.738462)">
+                            <polygon id="Rectangle" transform="translate(6.750499, 6.750499) rotate(135.000000) translate(-6.750499, -6.750499) " points="-0.749500508 5.25049949 11.6034407 5.25049949 14.2504995 6.70893455 11.6034407 8.25049949 -0.749500508 8.25049949"></polygon>
+                        </g>
+                    </g>
+                </g>
+                <line x1="15.2884744" y1="7.53847439" x2="13.1767767" y2="5.4267767" id="Line" stroke="#572848" stroke-width="0.75" stroke-linecap="square"></line>
+            </g>
+        </g>
+    </g>
+</svg>

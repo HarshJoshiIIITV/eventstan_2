@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="242px" height="282px" viewBox="0 0 242 282" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>placeholder - profile  4</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="240" height="280" rx="16"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="placeholder---profile--4" transform="translate(1.000000, 1.000000)">
+            <rect id="Rectangle" stroke="#D0B75B" fill="#DCDCDC" stroke-linecap="square" stroke-linejoin="round" x="0" y="0" width="240" height="280" rx="16"></rect>
+            <g id="Oval-+-Oval-Copy-10-Mask">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#DCDCDC" xlink:href="#path-1"></use>
+                <ellipse id="Oval" fill="#9B9B9B" mask="url(#mask-2)" cx="119.5" cy="109" rx="46.5" ry="46"></ellipse>
+                <circle id="Oval-Copy-10" fill="#9B9B9B" mask="url(#mask-2)" cx="119.5" cy="269.5" r="92.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

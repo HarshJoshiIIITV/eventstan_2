@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>terms n condition</title>
+    <defs>
+        <circle id="path-1" cx="8" cy="8" r="8"></circle>
+        <filter x="-8.8%" y="-8.8%" width="117.5%" height="117.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="2" operator="erode" in="SourceAlpha" result="shadowSpreadInner1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.435294118   0 0 0 0 0.768627451   0 0 0 0 0.976470588  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="My-Profile" transform="translate(-160.000000, -396.000000)">
+            <g id="terms-n-condition" transform="translate(160.000000, 396.000000)">
+                <rect id="Rectangle-Copy-5" fill="#6FC4F9" x="0" y="0" width="32" height="32" rx="8"></rect>
+                <g id="Group-3" transform="translate(8.000000, 8.000000)">
+                    <g id="Oval-8" fill-rule="nonzero">
+                        <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use stroke="#FFFFFF" stroke-width="0.8" xlink:href="#path-1"></use>
+                    </g>
+                    <path d="M8.07508625,5.03911309 C7.66441958,5.03911309 7.34086402,4.71555753 7.34086402,4.31733531 C7.34086402,3.91911309 7.66441958,3.58311309 8.07508625,3.58311309 C8.47330847,3.58311309 8.79686402,3.91911309 8.79686402,4.31733531 C8.79686402,4.71555753 8.47330847,5.03911309 8.07508625,5.03911309 Z M7.52753069,12.3937798 L7.52753069,6.17155753 L8.61019736,6.17155753 L8.61019736,12.3937798 L7.52753069,12.3937798 Z" id="i" fill="#6FC4F9"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

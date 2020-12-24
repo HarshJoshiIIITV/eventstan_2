@@ -69,6 +69,7 @@ class Home extends Component {
     onsubmit = (e) => {
         e.preventDefault();
         const curr_state = { phone_number: this.state.phone_number, name: this.state.name, email: this.state.email, message: this.state.message, userType: "USER" }
+        console.log(curr_state)
         if (curr_state.phone_number == null || !(curr_state.phone_number.length >= 10 && curr_state.phone_number.length <= 17) || curr_state.email == null || curr_state.name == null || curr_state.message == null) {
             document.getElementById("message_contact2").innerHTML = ""
             document.getElementById("message_contact").innerHTML = ""
@@ -106,7 +107,7 @@ class Home extends Component {
             .catch((err) => {
                 document.getElementById("message_contact2").innerHTML = ""
                 document.getElementById("message_contact").innerHTML = ""
-                document.getElementById("message_contact2").innerHTML = "Please fill all details!"
+                document.getElementById("message_contact2").innerHTML = "Please fill correct details!"
                 setTimeout(
                     () => {
                         document.getElementById("message_contact").innerHTML = "";
@@ -268,10 +269,10 @@ class Home extends Component {
                     <Container id="contactform_home" className="contact_container">
                         <h2 style={{ color: '#2D2D2D', textAlign: 'center' }} className="title bold_me">Contact us</h2>
                         <br />
-                        <form id="contact_abc" onSubmit={this.onsubmit} >
+                        <form autoComplete="nope" id="contact_abc" onSubmit={this.onsubmit} >
                             <div class="form-group">
                                 <label>Full name</label>
-                                <input pattern="[A-Za-z ]{1,32}" required onChange={this.onchange} type="text" class="form-control" name="name" placeholder="Enter your name" />
+                                <input autoComplete="nope" pattern="[A-Za-z ]{1,32}" required onChange={this.onchange} type="text" class="form-control" name="name" placeholder="Enter your name" />
                             </div>
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 col-xs-12">
@@ -290,13 +291,13 @@ class Home extends Component {
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label >Email ID</label>
-                                        <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required onChange={this.onchange} type="email" class="form-control" name="email" placeholder="Enter Email ID " />
+                                        <input autoComplete="nope" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required onChange={this.onchange} type="email" class="form-control" name="email" placeholder="Enter Email ID " />
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label >Message</label>
-                                <textarea required onChange={this.onchange} class="form-control" rows="6" name="message" placeholder="Write here"></textarea>
+                                <textarea autoComplete="nope" required onChange={this.onchange} class="form-control" rows="6" name="message" placeholder="Write here"></textarea>
                             </div>
                             <h6 id="message_contact" style={{ color: 'green' }}></h6>
                             <h6 id="message_contact2" style={{ color: 'red' }}></h6>

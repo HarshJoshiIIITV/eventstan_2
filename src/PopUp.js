@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import axios from "axios";
-import { Range } from "rc-slider";
+import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import { withRouter } from "react-router-dom";
+
+const { createSliderWithTooltip } = Slider;
+const Range = createSliderWithTooltip(Slider.Range);
 
 class PopUp extends Component {
   constructor() {
@@ -21,8 +24,7 @@ class PopUp extends Component {
       date: "",
       startDate: "",
       endDate: "",
-      minPeople: 0,
-      maxPeople: 0,
+      people: [0, 0],
     };
   }
   componentDidMount() {
@@ -36,9 +38,20 @@ class PopUp extends Component {
           userId: "3",
           filters: [],
         };
+        console.log(resp.data.data);
         this.setState({
           filters: resp.data.data.result.filters,
           form_resp: x,
+        });
+        resp.data.data.result.filters.forEach((f) => {
+          if (f.type === 7) {
+            this.setState({
+              people: [
+                parseInt(f.membersMinRange),
+                parseInt(f.membersMaxRange),
+              ],
+            });
+          }
         });
       });
   }
@@ -74,6 +87,14 @@ class PopUp extends Component {
           type: 4,
           startDate: this.state.startDate,
           endDate: this.state.endDate,
+        });
+      }
+      if (f.type === 7) {
+        filt.push({
+          filterId: f._id,
+          type: 7,
+          membersMinRange: this.state.people[0],
+          membersMaxRange: this.state.people[1],
         });
       }
       axios
@@ -138,17 +159,22 @@ class PopUp extends Component {
                 return (
                   <Col>
                     <h6>Number of Person's Range</h6>
+                    <Row style={{ padding: "10px" }}>
+                      {this.state.people[0]}
+                      <span style={{ marginLeft: "auto" }}>
+                        {this.state.people[1]}
+                      </span>
+                    </Row>
                     <Range
+                      step={10}
                       min={this.state.minPeople}
                       max={this.state.maxPeople}
-                      defaultValue={[3, 10]}
-                      tipFormatter={(value) => `${value}%`}
-                      onBeforeChange={(value) =>
-                        this.setState({ minPeople: value })
-                      }
-                      onAfterChange={(value) =>
-                        this.setState({ maxPeople: value })
-                      }
+                      tipFormatter={(value) => `${value}`}
+                      onChange={(values) => {
+                        this.setState({
+                          people: values,
+                        });
+                      }}
                     />
                   </Col>
                 );

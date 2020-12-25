@@ -126,7 +126,7 @@ class PopUp extends Component {
             this.state.filters.map((filter) => {
               if (filter.type == 6) {
                 return (
-                  <Col>
+                  <Col md={6}>
                     <div>
                       <h6>Select Time</h6>
                       <div style={{ display: "flex", justifyContent: "left" }}>
@@ -157,7 +157,7 @@ class PopUp extends Component {
               }
               if (filter.type == 7) {
                 return (
-                  <Col>
+                  <Col md={6}>
                     <h6>Number of Person's Range</h6>
                     <Row style={{ padding: "10px" }}>
                       {this.state.people[0]}
@@ -196,7 +196,7 @@ class PopUp extends Component {
               // }
               if (filter.type == 5) {
                 return (
-                  <Col>
+                  <Col md={6}>
                     <div>
                       <h6>Select Time</h6>
                       <div style={{ display: "flex", justifyContent: "left" }}>
@@ -216,7 +216,7 @@ class PopUp extends Component {
                 );
               }
               if (filter.type == 3) {
-                <Col>
+                <Col md={6}>
                   <div>
                     <h6>Select Date</h6>
                     <input
@@ -228,7 +228,7 @@ class PopUp extends Component {
                 </Col>;
               }
               if (filter.type == 4) {
-                <Col>
+                <Col md={6}>
                   <div>
                     <h6>Date range</h6>
                     <div style={{ display: "flex", justifyContent: "left" }}>

@@ -121,7 +121,7 @@ class PopUp extends Component {
         >
           {this.props.state.title}
         </h3>
-        <Row className="create_event_popup">
+        <Row className="create_event_popup" style={{margin: 0}}>
           {this.state.filters &&
             this.state.filters.map((filter) => {
               if (filter.type == 6) {

@@ -2,17 +2,17 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import img0 from './assets/home_box.png'
-import img1 from './assets/Home/arrow_img.png'
-import img4 from './assets/Home/group24.png'
-import img10 from './assets/Home/group25.png'
-import img2 from './assets/Home/arrow_img2.png'
-import img3 from './assets/Home/arrow_img3.png'
-import img6 from './assets/Home/group243.png'
-import img7 from './assets/Home/group245.png'
-import img5 from './assets/Home/group242.png'
+import img1 from './assets/landing page pngs/what ic 1@2x.png'
+import img4 from './assets/landing page pngs/benefit 1@2x.png'
+import img10 from './assets/landing page pngs/pro 1@2x.png'
+import img2 from './assets/landing page pngs/what ic 2@2x.png'
+import img3 from './assets/landing page pngs/what ic 3@2x.png'
+import img6 from './assets/landing page pngs/benefit 3@2x.png'
+import img7 from './assets/landing page pngs/benefit 4@2x.png'
+import img5 from './assets/landing page pngs/benefit 2@2x.png'
 import img8 from './assets/Home/group342.png'
-import img9 from './assets/Home/group343.png'
-import img11 from './assets/Home/dumble.png'
+import img9 from './assets/landing page pngs/pro 3@2x.png'
+import img11 from './assets/landing page pngs/pro 2@2x.png'
 import { Component } from 'react';
 import axios from 'axios';
 import Backdrop from './Backdrop/Backdrop';
@@ -22,6 +22,11 @@ import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import event_success from './assets/extras/event success.svg'
 import hire_pro from './assets/landing page pngs/hire pro.svg'
+import why1 from './assets/landing page pngs/why 1.svg'
+import why2 from './assets/landing page pngs/why 2.svg'
+import why3 from './assets/landing page pngs/why 3.svg'
+import why4 from './assets/landing page pngs/why 4.svg'
+import why5 from './assets/landing page pngs/why 5.svg'
 
 class Home extends Component {
     constructor() {
@@ -69,8 +74,20 @@ class Home extends Component {
     onsubmit = (e) => {
         e.preventDefault();
         const curr_state = { phone_number: this.state.phone_number, name: this.state.name, email: this.state.email, message: this.state.message, userType: "USER" }
-        console.log(curr_state)
-        if (curr_state.phone_number == null || !(curr_state.phone_number.length >= 10 && curr_state.phone_number.length <= 17) || curr_state.email == null || curr_state.name == null || curr_state.message == null) {
+        if (curr_state.phone_number == null || !(curr_state.phone_number.length >= 10 && curr_state.phone_number.length <= 17)) {
+            document.getElementById("message_contact2").innerHTML = ""
+            document.getElementById("message_contact").innerHTML = ""
+            document.getElementById("message_contact2").innerHTML = "Please fill mobile number correctly "
+            setTimeout(
+                () => {
+                    document.getElementById("message_contact").innerHTML = "";
+                    document.getElementById("message_contact2").innerHTML = "";
+                },
+                5000
+            )
+            return;
+        }
+        if (curr_state.email == null || curr_state.name == null || curr_state.message == null) {
             document.getElementById("message_contact2").innerHTML = ""
             document.getElementById("message_contact").innerHTML = ""
             document.getElementById("message_contact2").innerHTML = "Please fill all details!"
@@ -107,7 +124,7 @@ class Home extends Component {
             .catch((err) => {
                 document.getElementById("message_contact2").innerHTML = ""
                 document.getElementById("message_contact").innerHTML = ""
-                document.getElementById("message_contact2").innerHTML = "Please fill correct details!"
+                document.getElementById("message_contact2").innerHTML = "Please fill all details!"
                 setTimeout(
                     () => {
                         document.getElementById("message_contact").innerHTML = "";
@@ -126,17 +143,66 @@ class Home extends Component {
         return (
             <div className="App">
                 <div className="upper_part">
-                    <div className="mob" style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: '15px', paddingRight: '15px', maxWidth: "1140px", margin: '5px auto' }}>
+                    <div class="header-top">
+                        <div class="container">
+                            <div class="row align-items-center">
+                                <div class="col-9 col-md-11 col-lg-3 col-xl-3">
+                                    <a href="/eventstan" class="navbar-brand">Event<span class="colored">stan</span></a>
+                                </div>
+                                <div class="col-4 col-sm-4 col-md-3 col-lg-3 col-xl-3 d-none d-lg-block">
+                                    <div class="input-group md-form form-sm form-2 pl-0">
+                                        <input className="form-control my-0 py-1" type="text" placeholder="Search here..." aria-label="Search" />
+                                        <div className="input-group-append">
+                                            <span class="input-group-text  lighten-3" id="basic-text1">
+                                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"></path>
+                                                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"></path>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-5 col-sm-5 col-md-3 col-lg-5 col-xl-5 text-md-left text-xl-right d-none d-lg-block wrap">
+                                    <Button href="/professional" className="btn event-bg-btn mr-lg-0 mr-xl-2">Become a Professional</Button>
+                                    <Button className="btn event-bg-btn">Request for Demo</Button>
+                                </div>
+                                <div class="col-3 col-sm-1 col-md-1 col-lg-1 col-xl-1">
+                                    {/* <div id="mySidenav" class="sidenav">
+                                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                    <a class="nav-link active" href="home.html">Home</a>
+                    <a class="nav-link" href="#">Who We Are</a>
+                    <a class="nav-link" href="#">About Us</a>
+                    <a class="nav-link" href="#">Benifit Of Joining Us </a>
+                    <a class="nav-link" href="professional.html">Become a Professional</a>
+                    <a class="nav-link" href="#">Testimonials</a>
+                    <a class="nav-link" href="#">Download Our App</a>
+                    <div class="sign-in-up-btn">
+                        <button class="btn event-outline-btn mr-3">Sign Up</button>
+                        <button class="btn event-bg-btn">Login</button>
+                    </div>
+                                    </div> */}
+                                    <div style={{ display: 'flex' }}>
+                                        <span className="navbar-toggler-icon"></span>
+                                        <span className="navbar-toggler-icon"></span>
+                                        <span className="navbar-toggler-icon"></span>
+                                        <span class="ml-0 ml-sm-3 menu">Menu</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* <div className="mob" style={{ display: 'flex', justifyContent: 'space-between', paddingLeft: '15px', paddingRight: '15px', maxWidth: "1140px", margin: '5px auto' }}>
                         <a href="/eventstan" class="navbar-brand">Event<span className="colored">stan</span></a>
                         <Button className="button_homepage" href="/professional" style={{ backgroundColor: "#F47824" }}>Become a Professional</Button>
-                    </div>
+                    </div> */}
+
                     <div className="banner-content">
                         <h2 className="banner-title  bold_me">We don’t just create events we create memories</h2>
                         <p className="banner-text">EVENTSTAN is where all your personal and corporate event needs meet under one roof. You choose, and we deliver.</p>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <Link to="/create_event"><Button className="button_homepage" style={{ backgroundColor: "white", color: 'black', padding: '0px 20px' }}><img src={event_success} height="50px" />Create an event</Button></Link>
-                        <Button className="button_homepage" href="" style={{ backgroundColor: "white", color: 'black', padding: '0px 20px', marginLeft: '20px' }}><img src={hire_pro} height="40px" />Hire Professional</Button>
+                    <div style={{ display: 'flex', justifyContent: 'center' }} className="homepage_banner_buttons">
+                        <Link to="/create_event"><Button className="button_homepage" style={{ borderRadius: '12px', backgroundColor: "white", color: 'black', padding: '0px 20px' }}><img src={event_success} height="50px" />Create an event</Button></Link>
+                        <Button className="button_homepage" href="" style={{ backgroundColor: "white", color: 'black', padding: '0px 20px', borderRadius: '12px', marginLeft: '20px' }}><img src={hire_pro} height="40px" />Hire Professional</Button>
 
 
                     </div>
@@ -165,7 +231,7 @@ class Home extends Component {
 
                     </div>
                 </div>
-                <div className="application_sec">
+                <div className="application_sec" id="section_2a">
                     <Container>
                         <h2 style={{ color: '#343a40', textAlign: 'center' }} className="title bold_me">What makes us different from other <br />  applications?</h2>
                         {/* <div style={{ textAlign: 'center' }}><Button style={{ backgroundColor: "#F47824" }}>Become a Professional</Button>
@@ -265,6 +331,72 @@ class Home extends Component {
                     </Container>
                 </div>
 
+                <div className="space">
+                    <Container>
+                        <h2 style={{ color: '#343a40', textAlign: 'center' }} className="title bold_me">Why Should You Be Here, On <br /> EVENTSTAN ?</h2>
+                        <h4 className="bold_me" style={{ margin: '30px 0px 50px 0px', textAlign: 'center', color: 'grey' }}>Joining hands with us will bring you more than a bagful of benefits</h4>
+                        <br />
+                        <Row>
+                            <Col md={4} xs={12} sm={12}>
+                                <div class="section_last_card">
+                                    <img src={why1} alt="" class="mb-4" />
+                                    <h6 className="bold_me">Better Connections </h6>
+                                    <p style={{ color: 'rgb(90, 90, 92)' }}>
+                                        EVENTSTAN facilitates faster and more professional networking with your audience
+</p>
+                                </div>
+
+                            </Col>
+                            <Col md={4} xs={12} sm={12}>
+                                <div class="section_last_card">
+                                    <img src={why2} alt="" class="mb-4" />
+                                    <h6 className="bold_me">Better Schedule Management</h6>
+                                    <p style={{ color: 'rgb(90, 90, 92)' }}>
+                                        With the in-built dashboard, EVENTSTAN ensures your appointment never clash
+</p>
+                                </div>
+
+                            </Col>
+                            <Col md={4} xs={12} sm={12}>
+                                <div class="section_last_card">
+                                    <img src={why3} alt="" class="mb-4" />
+                                    <h6 className="bold_me">Better Output </h6>
+                                    <p style={{ color: 'rgb(90, 90, 92)' }}>
+                                        A streamlined scheduling and faster closure helps you enhance your productivity
+</p>
+                                </div>
+
+                            </Col>
+
+
+                        </Row>
+
+                        <Row className="second_slot">
+                            <Col md={3} />
+                            <Col md={3} xs={12} sm={12}>
+                                <div class="section_last_card">
+                                    <img src={why4} alt="" class="mb-4" />
+                                    <h6 className="bold_me">Flexible Work</h6>
+                                    <p style={{ color: 'rgb(90, 90, 92)' }}>
+                                        Nobody will force you to do anything. Choose your event as and when you deem fit
+</p>
+                                </div>
+                            </Col>
+                            <Col md={3} xs={12} sm={12}>
+                                <div class="section_last_card">
+                                    <img src={why5} alt="" class="mb-4" />
+                                    <h6 className="bold_me">No Hassles</h6>
+                                    <p style={{ color: 'rgb(90, 90, 92)' }}>
+                                        From payment concerns to coordinating with the client, everything will be handled by EVENTSTAN
+</p>
+                                </div>
+                            </Col>
+                            <Col md={3} />
+
+                        </Row>
+                    </Container>
+                </div>
+
                 <div className="Contact_sec mr-0">
                     <Container id="contactform_home" className="contact_container">
                         <h2 style={{ color: '#2D2D2D', textAlign: 'center' }} className="title bold_me">Contact us</h2>
@@ -305,11 +437,13 @@ class Home extends Component {
                         </form>
                     </Container>
                 </div>
-                {this.state.popup ?
-                    < PopUp_contact />
-                    : null}
-                {backdrop}
-            </div>
+                {
+                    this.state.popup ?
+                        < PopUp_contact />
+                        : null
+                }
+                { backdrop}
+            </div >
         );
 
     }

@@ -5,6 +5,15 @@
 .bold_me {
 	font-family: campton_bold !important;
 }
+#section_2a img {
+	height: 90px;
+	width: 90px;
+}
+
+.para3 img {
+	height: 55px;
+	width: 55px;
+}
 
 h2,
 p {
@@ -44,6 +53,109 @@ a.navbar-brand {
 	font-weight: bold !important;
 	color: #2d2d2d;
 }
+.input-group > .form-control:not(:last-child),
+.input-group > .custom-select:not(:last-child) {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.input-group > .form-control,
+.input-group > .form-control-plaintext,
+.input-group > .custom-select,
+.input-group > .custom-file {
+	position: relative;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	width: 1%;
+	min-width: 0;
+	margin-bottom: 0;
+}
+.upper_part .event-bg-btn {
+	border-radius: 8px;
+	background-color: #f47824;
+	padding: 9px 15px;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 0;
+	line-height: 20px;
+}
+.form-control {
+	transition: none;
+}
+
+.section_last_card {
+	text-align: center;
+	margin: 10px;
+}
+.section_last_card img {
+	width: 100px;
+}
+.section_last_card h6 {
+	font-weight: 600;
+	font-size: 20px;
+}
+.section_last_card p {
+	font-size: 14px;
+	line-height: 1.3;
+}
+.upper_part .form-control {
+	border-radius: 8px;
+	border-bottom-right-radius: 0px;
+	border-top-right-radius: 0px;
+	border-right: 0px;
+	height: 40px;
+	background-color: #ffffff;
+	color: #272729;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0;
+	line-height: 18px;
+}
+.upper_part .header-top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	padding: 15px 0;
+}
+.align-items-center {
+	-ms-flex-align: center !important;
+	align-items: center !important;
+}
+
+.bi.bi-search {
+	fill: #f47824;
+}
+.upper_part .input-group-text {
+	border-bottom-right-radius: 8px;
+	border-top-right-radius: 8px;
+	background-color: #ffffff;
+	border-left: 0px;
+	height: 40px;
+}
+.upper_part .input-group {
+	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	width: 100%;
+}
+.upper_part .input-group-append {
+	margin-left: -1px;
+}
+
+.upper_part .input-group-prepend,
+.upper_part .input-group-append {
+	display: -ms-flexbox;
+	display: flex;
+}
 
 .banner-content {
 	margin: 0 auto;
@@ -61,11 +173,80 @@ a.navbar-brand {
 	height: 612px;
 	padding: 15px 10px;
 }
+.navbar-toggler-icon {
+	width: 0px;
+	height: 0px;
+}
+.menu {
+	position: relative;
+	font-weight: 500;
+	letter-spacing: 0;
+	line-height: 20px;
+	color: #ffffff;
+	display: inline-block;
+	margin-top: 23px;
+}
 
+.navbar-toggler-icon {
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+	vertical-align: middle;
+	content: '';
+	background: no-repeat center center;
+	background-size: 100% 100%;
+}
+.navbar-toggler-icon:after {
+	width: 10px;
+	border: 3px solid #fff;
+	content: '';
+	display: block;
+	background-color: #fff;
+	border-radius: 3px;
+	position: absolute;
+	top: 15px;
+	left: 10px;
+}
+.navbar-toggler-icon:nth-child(2):after {
+	top: 25px;
+	width: 18px;
+	left: 0;
+}
+
+.navbar-toggler-icon:after {
+	width: 10px;
+	border: 3px solid #fff;
+	content: '';
+	display: block;
+	background-color: #fff;
+	border-radius: 3px;
+	position: absolute;
+	top: 15px;
+	left: 10px;
+}
+.navbar-toggler-icon:nth-child(3):after {
+	top: 35px;
+	left: 0;
+}
+
+.navbar-toggler-icon:after {
+	width: 10px;
+	border: 3px solid #fff;
+	content: '';
+	display: block;
+	background-color: #fff;
+	border-radius: 3px;
+	position: absolute;
+	top: 15px;
+	left: 10px;
+}
 @media only screen and (min-width: 768px) {
 	.banner-title {
 		font-size: 56px;
 		line-height: 64px;
+	}
+	.second_slot {
+		margin-top: 50px;
 	}
 }
 
@@ -208,10 +389,17 @@ a.navbar-brand {
 	background-color: #f47824;
 }
 
+.header-top .event-bg-btn:hover {
+	background-color: #f47824 !important;
+}
+
 @media (max-width: 500px) {
 	.upper_part Button {
 		margin-top: 20px;
 		text-align: center;
+	}
+	.section_last_card {
+		margin-bottom: 20px;
 	}
 	.mob {
 		flex-wrap: wrap;
@@ -232,10 +420,22 @@ a.navbar-brand {
 		background-image: url(./assets/mob_back.png);
 	}
 	a.navbar-brand {
-		font-size: 18px;
+		font-size: 30px;
+		padding-left: 10px;
 	}
 	.mob_head_2 {
 		font-size: 20px;
+	}
+	.homepage_banner_buttons {
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-top: -50px !important;
+	}
+	.homepage_banner_buttons Button {
+		width: 250px;
+		padding-top: 5px !important;
+		padding-bottom: 5px !important;
+		margin-left: 0px !important;
 	}
 }
 

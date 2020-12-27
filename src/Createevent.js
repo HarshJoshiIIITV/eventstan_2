@@ -99,8 +99,8 @@ class Createevent extends Component {
                         <Col xs={12} md={7} >
                             <div className="create_event_mob1" style={{ display: 'flex', justifyContent: 'center' }}>
                                 <div style={{ position: 'relative' }}>
-                                    <input style={{ padding: '8px 8px', width: '250px', border: 'none', borderRadius: '8px', paddingRight: '30px' }} type="text" placeholder="Search here.." />
-                                    <img style={{ position: 'absolute', right: '3px', height: '20px', top: '10px' }} src={search_ico} height="50px" />
+                                    <input style={{ padding: '4px 8px', width: '250px', border: 'none', borderRadius: '8px', paddingRight: '30px' }} type="text" placeholder="Search here.." />
+                                    <img style={{ position: 'absolute', right: '3px', height: '20px', top: '10px' }} className="search_icon_top1" src={search_ico} height="50px" />
                                 </div>
                                 <Button href="/professional" style={{ backgroundColor: "#F47824", marginLeft: '20px' }}>Request for Demo</Button>
                                 <Button href="/professional" style={{ backgroundColor: "#F47824", marginLeft: '20px' }}>Menu</Button>
@@ -113,8 +113,8 @@ class Createevent extends Component {
                 <br />
                 <Container>
                     <p style={{ marginBottom: '5px' }}><a className="remove_anchor bold_me" href="/"><span style={{ fontSize: '24px', fontWeight: 'bold', paddingRight: '5px' }}>&lt;</span>  BACK</a></p>
-                    <h4 style={{ marginBottom: '1px' }} className="bold_me">Select the Event type to</h4>
-                    <h4 className="bold_me">Hire a Professional</h4>
+                    <h4 style={{ marginBottom: '1px' }} className="bold_me">Let us know what kind of</h4>
+                    <h4 className="bold_me">event is this?</h4>
                     <div className="filter_buttons" style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
                             <Button  >All</Button>
@@ -126,7 +126,7 @@ class Createevent extends Component {
                         </div>
                         <div style={{ position: 'relative' }}>
                             <input style={{ padding: '8px 8px', borderRadius: '8px', paddingRight: '30px' }} placeholder="Search here.." onChange={this.search_change} onKeyPress={this.handleKeyPress} type="text" />
-                            <img style={{ position: 'absolute', right: '3px', height: '20px', top: '10px' }} src={search_ico} height="50px" />
+                            <img style={{ position: 'absolute', right: '3px', height: '20px', top: '10px' }} className="search_icon_top1" src={search_ico} height="50px" />
 
                         </div>
                     </div>
@@ -138,7 +138,7 @@ class Createevent extends Component {
                                 : this.state.event_types.map((single_event) => {
                                     return (
                                         <div onClick={() => this.toogle_popup(single_event._id)} className="card_create_event">
-                                            <img src={card_pic} height="150px" width='150px' />
+                                            <img src={card_pic} />
                                             <h6>{single_event.name}</h6>
                                         </div>
                                     )

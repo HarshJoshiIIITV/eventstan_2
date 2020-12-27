@@ -69,7 +69,7 @@ class Form_ind extends Component {
             specilization,
             introduceYourself,
             emirates } = curr_state;
-        if (email.length == 0 || phone_number == undefined || !(phone_number.length >= 10 && phone_number.length <= 17) || firstName.length == 0 || lastName.length == 0 || emirates.length == 0 || emirates.localeCompare("select") == 0 || visaType.length == 0 || visaType.localeCompare("select") == 0 || specilization.length == 0 || specilization.localeCompare("select") == 0 || introduceYourself.length == 0 || introduceYourself.length == 0) {
+        if (email.length == 0 || firstName.length == 0 || lastName.length == 0 || emirates.length == 0 || emirates.localeCompare("select") == 0 || visaType.length == 0 || visaType.localeCompare("select") == 0 || specilization.length == 0 || specilization.localeCompare("select") == 0 || introduceYourself.length == 0 || introduceYourself.length == 0) {
             return false;
         }
         else {
@@ -90,6 +90,19 @@ class Form_ind extends Component {
             introduceYourself: this.state.introduceYourself,
             emirates: this.state.emirates,
 
+        }
+        if (curr_state.phone_number == undefined || !(curr_state.phone_number.length >= 10 && curr_state.phone_number.length <= 17)) {
+            document.getElementById("message_contact2").innerHTML = ""
+            document.getElementById("message_contact").innerHTML = ""
+            document.getElementById("message_contact2").innerHTML = "Please fill mobile number correctly!"
+            setTimeout(
+                () => {
+                    document.getElementById("message_contact").innerHTML = "";
+                    document.getElementById("message_contact2").innerHTML = "";
+                },
+                5000
+            )
+            return;
         }
         if (!this.valid(curr_state)) {
             document.getElementById("message_contact2").innerHTML = ""

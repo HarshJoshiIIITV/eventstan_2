@@ -67,7 +67,7 @@ class Form_org extends Component {
             OintroduceYourself,
             city
         } = curr_state
-        if (Bemail.length == 0 || Bname.length == 0 || BcontactNumber == undefined || !(BcontactNumber.length >= 10 && BcontactNumber.length <= 17) || contactPerson.length == 0 || Ospecilization.length == 0
+        if (Bemail.length == 0 || Bname.length == 0 || contactPerson.length == 0 || Ospecilization.length == 0
             || OintroduceYourself.length == 0 || city.length == 0 || city.localeCompare("select") == 0 || Ospecilization.localeCompare("select") == 0) {
             return false;
         }
@@ -88,6 +88,19 @@ class Form_org extends Component {
             OintroduceYourself: this.state.OintroduceYourself,
             city: this.state.city
 
+        }
+        if (curr_state.BcontactNumber == undefined || !(curr_state.BcontactNumber.length >= 10 && curr_state.BcontactNumber.length <= 17)) {
+            document.getElementById("message_contact2").innerHTML = ""
+            document.getElementById("message_contact").innerHTML = ""
+            document.getElementById("message_contact2").innerHTML = "Please fill mobile number correctly!"
+            setTimeout(
+                () => {
+                    document.getElementById("message_contact").innerHTML = "";
+                    document.getElementById("message_contact2").innerHTML = "";
+                },
+                5000
+            )
+            return;
         }
         if (!this.valid(curr_state)) {
             document.getElementById("message_contact2").innerHTML = ""

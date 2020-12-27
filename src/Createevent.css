@@ -1,51 +1,51 @@
 .header_createevent {
-  padding: 15px;
-  background-color: lightslategray;
+	padding: 15px;
+	background-color: lightslategray;
 }
 .filter_buttons {
-  margin-top: 20px;
+	margin-top: 20px;
 }
 
 .filter_buttons Button {
-  margin-right: 10px;
-  background-color: lightslategray;
+	margin-right: 10px;
+	background-color: lightslategray;
 }
 .popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  z-index: 100;
-  background-color: white;
-  border-radius: 8px;
-  padding: 20px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 700px;
+	z-index: 100;
+	background-color: white;
+	border-radius: 8px;
+	padding: 20px;
 }
 .create_event_popup input {
-  border: 1px solid silver;
-  border-radius: 8px;
-  padding: 8px 8px;
-  width: 250px;
+	border: 1px solid silver;
+	border-radius: 8px;
+	padding: 8px 8px;
+	width: 250px;
 }
 .create_event_popup {
-  padding-top: 20px;
+	padding-top: 20px;
 }
 .create_event_popup Button {
-  background-color: lightslategray;
+	background-color: lightslategray;
 }
 .popup_name {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 350px;
-  z-index: 100;
-  background-color: white;
-  border-radius: 8px;
-  padding: 40px 34px 20px 34px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 350px;
+	z-index: 100;
+	background-color: white;
+	border-radius: 8px;
+	padding: 40px 34px 20px 34px;
 }
 .popup h6 {
-  font-size: 16px;
+	font-size: 16px;
 }
 
 /* .popup div {
@@ -53,77 +53,90 @@
 } */
 
 .create_event p {
-  color: black;
+	color: black;
 }
 .cards_create_event {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  margin-bottom: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: left;
+	margin-bottom: 50px;
 }
 .cards_create_event h6 {
-  margin-top: 8px;
+	margin-top: 8px;
 }
 .cards_create_event .card_create_event {
-  margin: 15px;
+	margin: 30px;
+	width: 170px;
+	margin-left: 0px;
 }
 .cards_create_event::after {
-  content: " ";
-  flex: auto;
+	content: ' ';
+	flex: auto;
 }
 
 .card_create_event img {
-  border-radius: 10px;
+	border-radius: 10px;
+	width: 170px;
+	height: 170px;
 }
 
 .remove_anchor {
-  color: black !important ;
-  text-decoration: none !important;
+	color: black !important ;
+	text-decoration: none !important;
 }
 
 .filter_buttons input {
-  border-radius: 8px;
-  border: 0.5px solid silver;
-  padding: 8px 8px;
-  width: 250px;
+	border-radius: 8px;
+	border: 0.5px solid silver;
+	padding: 8px 8px;
+	width: 250px;
 }
 
 .data_not_found {
-  text-align: center;
-  width: 100%;
-  padding: 100px;
-  color: rgb(244, 120, 36);
+	text-align: center;
+	width: 100%;
+	padding: 100px;
+	color: rgb(244, 120, 36);
 }
 
 @media (max-width: 500px) {
-  .create_event_mob1 {
-    flex-wrap: wrap;
-  }
-  .create_event_mob1 input {
-    margin: 15px 0px;
-  }
-  .filter_buttons {
-    flex-wrap: wrap;
-  }
-  .filter_buttons input {
-    margin-top: 12px;
-  }
-  .card_create_event img {
-    height: 130px !important;
-    width: 130px !important;
-  }
-  .create_event_mob1 Button {
-    margin-left: 0px !important;
-  }
-  .popup {
-    width: 333px;
-    padding: 5px;
-  }
-  .create_event_popup {
-    padding-top: 5px;
-  }
-  .data_not_found {
-    font-size: 32px;
-    padding: 10px;
-  }
+	.create_event_mob1 {
+		flex-wrap: wrap;
+	}
+	.create_event_mob1 input {
+		margin: 15px 0px;
+	}
+	.filter_buttons {
+		flex-wrap: wrap;
+	}
+	.filter_buttons input {
+		margin-top: 12px;
+	}
+	.card_create_event img {
+		height: 130px !important;
+		width: 130px !important;
+	}
+	.create_event_mob1 Button {
+		margin-left: 0px !important;
+	}
+	.popup {
+		width: 333px;
+		padding: 5px;
+	}
+	.create_event_popup {
+		padding-top: 5px;
+	}
+	.data_not_found {
+		font-size: 32px;
+		padding: 10px;
+	}
+	.cards_create_event .card_create_event {
+		margin: 20px;
+		width: 130px;
+		margin-left: 0px;
+		margin-bottom: 0px;
+	}
+	.search_icon_top1 {
+		top: 22px !important;
+	}
 }

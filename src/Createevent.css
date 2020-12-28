@@ -81,31 +81,27 @@
   text-decoration: none !important;
 }
 
-.filter_buttons input {
-  border-radius: 8px;
-  border: 0.5px solid silver;
-  padding: 8px 8px;
-  width: 250px;
-}
-
 .data_not_found {
   text-align: center;
   width: 100%;
   padding: 100px;
   color: rgb(244, 120, 36);
 }
+.popup {
+  max-height: 80vh;
+}
 
 @media (max-width: 500px) {
   .create_event_mob1 {
     flex-wrap: wrap;
   }
-  .create_event_mob1 input {
+  .create_event_mob1 .input-group {
     margin: 15px 0px;
   }
   .filter_buttons {
     flex-wrap: wrap;
   }
-  .filter_buttons input {
+  .filter_buttons .input-group {
     margin-top: 12px;
   }
   .card_create_event img {

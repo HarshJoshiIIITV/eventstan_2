@@ -2,11 +2,9 @@ import React, { Component } from "react";
 import { Row, Col, Container, Button } from "react-bootstrap";
 import "./Createevent.css";
 import card_pic from "./assets/create_event/card.jpg";
-import PopUp from "./PopUp";
 import Name_popup from "./Name_popup";
 import Backdrop from "./Backdrop/Backdrop";
 import axios from "axios";
-import search_ico from "./assets/landing page pngs/search.svg";
 import SearchInput from "./components/SearchInput";
 import Popup from "./components/Popup";
 

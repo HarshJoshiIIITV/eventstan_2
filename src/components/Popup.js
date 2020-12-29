@@ -5,6 +5,8 @@ import { useHistory } from "react-router-dom";
 
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
+import Select from "react-select";
+import "./Popup.css";
 
 const { createSliderWithTooltip } = Slider;
 const Range = createSliderWithTooltip(Slider.Range);
@@ -41,6 +43,11 @@ const Popup = ({ title, target_event_id }) => {
           } else if (f.type === 4) {
             f.startDate = "";
             f.endDate = "";
+          } else if (f.type === 1) {
+            f.set = false;
+          } else if (f.type === 8) {
+            f.location = [{ address: "", longitude: "", lattitude: "" }];
+            f.set = false;
           }
           fil.push(f);
         });
@@ -85,23 +92,76 @@ const Popup = ({ title, target_event_id }) => {
         date: value,
         set: true,
       };
+    } else if (type === 4) {
+      if (t === "startDate") {
+        fi.filters[index] = {
+          ...fi.filters[index],
+          startDate: value,
+          set: true,
+        };
+      }
+      if (t === "endDate") {
+        fi.filters[index] = {
+          ...fi.filters[index],
+          endDate: value,
+          set: true,
+        };
+      }
+    } else if (type === 1) {
+      fi.filters[index] = {
+        ...fi.filters[index],
+        singleSelect: value,
+        set: true,
+      };
+    } else if (type === 2) {
+      fi.filters[index] = {
+        ...fi.filters[index],
+        multiSelect: value ? value.map((v) => v.value) : [],
+        set: value ? true : false,
+      };
     }
     setForm({ ...fi });
   };
 
   const createEvent = () => {
+    let valid = true;
+
     form.filters.forEach((f) => {
       if (!f.set) {
-        setError(f.name + " is require field");
-        return;
+        setError(f.name + " is required field");
+        valid = false;
       }
     });
-    axios.post("https://api.eventstan.com/user/event", form).then((r) => {
-      history.push(
-        "/venuedetail/" + r.data.data.eventTypeId + "/" + r.data.data._id
-      );
-    });
+    if (valid) {
+      axios.post("https://api.eventstan.com/user/event", form).then((r) => {
+        history.push(
+          "/venuedetail/" + r.data.data.eventTypeId + "/" + r.data.data._id
+        );
+      });
+    }
   };
+
+  const addAddress = (index, type) => {
+    const fi = form;
+    fi.filters[index].location.push({
+      address: "",
+      longitude: "",
+      lattitude: "",
+    });
+
+    setForm({ ...fi });
+  };
+
+  const handleAddressChange = (e, indexOfFilter, indexOfLocation) => {
+    const fi = form;
+    fi.filters[indexOfFilter].location[indexOfLocation] = {
+      address: e.target.value,
+      longitude: "",
+      lattitude: "",
+    };
+    setForm({ ...fi });
+  };
+
   return (
     <div className="popup" style={{ overflowY: "scroll" }}>
       <h3
@@ -114,7 +174,7 @@ const Popup = ({ title, target_event_id }) => {
       >
         {title}
       </h3>
-      {error}
+      <h6 style={{ color: "red" }}>{error}</h6>
       <Row className="create_event_popup" style={{ margin: 0 }}>
         {filters.map((filter, i) => (
           <>
@@ -233,6 +293,50 @@ const Popup = ({ title, target_event_id }) => {
                     />
                   </div>
                 </div>
+              </Col>
+            )}
+            {filter.type === 1 && (
+              <Col md={6} style={{ marginTop: 10 }} key={i}>
+                <h6>{filter.name}</h6>
+                <Select
+                  name={filter.name}
+                  options={filters[i].singleSelect.map((option) => {
+                    return { label: option, value: option };
+                  })}
+                  className="basic-multi-select"
+                  classNamePrefix="select"
+                  onChange={(e) => handleChange(e.value, 1, i)}
+                />
+              </Col>
+            )}
+            {filter.type === 2 && (
+              <Col md={6} style={{ marginTop: 10 }} key={i}>
+                <h6>{filter.name}</h6>
+                <Select
+                  name={filter.name}
+                  options={filters[i].multiSelect.map((option) => {
+                    return { label: option, value: option };
+                  })}
+                  className="basic-multi-select"
+                  classNamePrefix="select"
+                  isMulti
+                  onChange={(e) => handleChange(e, 2, i)}
+                />
+              </Col>
+            )}
+            {filter.type === 8 && (
+              <Col md={6} style={{ marginTop: 10 }} key={i}>
+                <h6>{filter.name}</h6>
+                <Button onClick={() => addAddress(i, 8)}>Add More</Button>
+                {form.filters[i].location.map((l, ind) => (
+                  <input
+                    style={{ marginTop: "10px" }}
+                    type="text"
+                    value={l.address}
+                    key={ind}
+                    onChange={(e) => handleAddressChange(e, i, ind)}
+                  />
+                ))}
               </Col>
             )}
           </>

@@ -26,6 +26,9 @@ class Name_popup extends Component {
                 name="title"
                 placeholder="Enter name here.."
               />
+              <p style={{ fontWeight: "bold", color: "red" }}>
+                {this.props.error}
+              </p>
             </div>
           </Col>
         </Row>

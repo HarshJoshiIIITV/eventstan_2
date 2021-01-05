@@ -19,6 +19,7 @@ class Createevent extends Component {
       event_types: null,
       target_event_id: null,
       search_input: "",
+      error: "",
     };
   }
   componentDidMount() {
@@ -52,10 +53,16 @@ class Createevent extends Component {
     });
   };
   submit_popup_first = () => {
-    this.setState({
-      popup_first: false,
-      popup: true,
-    });
+    if (this.state.title) {
+      this.setState({
+        popup_first: false,
+        popup: true,
+      });
+    } else {
+      this.setState({
+        error: "Required",
+      });
+    }
   };
   onchange = (e) => {
     this.setState({
@@ -67,6 +74,7 @@ class Createevent extends Component {
       popup_first: false,
       popup: false,
       title: "",
+      error: "",
     });
   };
 
@@ -205,6 +213,7 @@ class Createevent extends Component {
           <Name_popup
             submit_popup_first={this.submit_popup_first}
             onchange={this.onchange}
+            error={this.state.error}
           />
         ) : null}
         {this.state.popup ? (

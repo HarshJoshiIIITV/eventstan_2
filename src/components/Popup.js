@@ -133,11 +133,16 @@ const Popup = ({ title, target_event_id }) => {
       }
     });
     if (valid) {
-      axios.post("https://api.eventstan.com/user/event", form).then((r) => {
-        history.push(
-          "/venuedetail/" + r.data.data.eventTypeId + "/" + r.data.data._id
-        );
-      });
+      axios.post("https://api.eventstan.com/user/event", form).then(
+        (r) => {
+          history.push(
+            "/venuedetail/" + r.data.data.eventTypeId + "/" + r.data.data._id
+          );
+        },
+        (err) => {
+          console.log(err.response);
+        }
+      );
     }
   };
 

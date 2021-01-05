@@ -1,6 +1,6 @@
 .header_createevent {
   padding: 15px;
-  background-color: lightslategray;
+  background-color: #8489b2;
 }
 .filter_buttons {
   margin-top: 20px;
@@ -8,7 +8,7 @@
 
 .filter_buttons Button {
   margin-right: 10px;
-  background-color: lightslategray;
+  background-color: #8489b2;
 }
 .popup {
   position: fixed;
@@ -31,7 +31,7 @@
   padding-top: 20px;
 }
 .create_event_popup Button {
-  background-color: lightslategray;
+  background-color: #8489b2;
 }
 .popup_name {
   position: fixed;

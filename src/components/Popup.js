@@ -125,7 +125,7 @@ const Popup = ({ title, target_event_id }) => {
 
   const createEvent = () => {
     let valid = true;
-
+    console.log(form);
     form.filters.forEach((f) => {
       if (!f.set) {
         setError(f.name + " is required field");
@@ -133,16 +133,19 @@ const Popup = ({ title, target_event_id }) => {
       }
     });
     if (valid) {
-      axios.post("https://api.eventstan.com/user/event", form).then(
-        (r) => {
-          history.push(
-            "/venuedetail/" + r.data.data.eventTypeId + "/" + r.data.data._id
-          );
-        },
-        (err) => {
-          console.log(err.response);
-        }
+      history.push(
+        "/venuedetail/5fe18a75cc510271c78d0749/5fe965fabe6c963a09df1a81"
       );
+      // axios.post("https://api.eventstan.com/user/event", form).then(
+      //   (r) => {
+      //     history.push(
+      //       "/venuedetail/" + r.data.data.eventTypeId + "/" + r.data.data._id
+      //     );
+      //   },
+      //   (err) => {
+      //     console.log(err.response);
+      //   }
+      // );
     }
   };
 
@@ -150,8 +153,8 @@ const Popup = ({ title, target_event_id }) => {
     const fi = form;
     fi.filters[index].location.push({
       address: "",
-      longitude: "",
-      lattitude: "",
+      longitude: 77.7,
+      lattitude: 17.23,
     });
 
     setForm({ ...fi });
@@ -159,6 +162,7 @@ const Popup = ({ title, target_event_id }) => {
 
   const handleAddressChange = (e, indexOfFilter, indexOfLocation) => {
     const fi = form;
+    fi.filters[indexOfFilter].set = true;
     fi.filters[indexOfFilter].location[indexOfLocation] = {
       address: e.target.value,
       longitude: "",

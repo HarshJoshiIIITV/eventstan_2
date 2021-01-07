@@ -125,27 +125,31 @@ const Popup = ({ title, target_event_id }) => {
 
   const createEvent = () => {
     let valid = true;
-    console.log(form);
     form.filters.forEach((f) => {
       if (!f.set) {
         setError(f.name + " is required field");
         valid = false;
+        return;
       }
+      delete f.name;
     });
     if (valid) {
-      history.push(
-        "/venuedetail/5fe18a75cc510271c78d0749/5fe965fabe6c963a09df1a81"
-      );
-      // axios.post("https://api.eventstan.com/user/event", form).then(
-      //   (r) => {
-      //     history.push(
-      //       "/venuedetail/" + r.data.data.eventTypeId + "/" + r.data.data._id
-      //     );
-      //   },
-      //   (err) => {
-      //     console.log(err.response);
-      //   }
-      // );
+      console.log({ ...form, eventName: title });
+      axios
+        .post("https://api.eventstan.com/user/event", {
+          ...form,
+          eventName: title,
+        })
+        .then(
+          (r) => {
+            history.push(
+              "/venuedetail/" + r.data.data.eventTypeId + "/" + r.data.data._id
+            );
+          },
+          (err) => {
+            console.log(err.response);
+          }
+        );
     }
   };
 
@@ -286,7 +290,7 @@ const Popup = ({ title, target_event_id }) => {
                   >
                     <input
                       type="date"
-                      style={{ width: "200px" }}
+                      style={{ width: "200px", marginBottom: "10px" }}
                       value={form.filters[i].startDate}
                       onChange={(e) =>
                         handleChange(e.target.value, 4, i, "startDate")

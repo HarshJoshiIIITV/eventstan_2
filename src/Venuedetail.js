@@ -6,7 +6,7 @@ import "./Venuedetail.css";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 
-import search_ico from './assets/landing page pngs/search.svg'
+import search_ico from "./assets/landing page pngs/search.svg";
 
 class Venuedetail extends Component {
   constructor() {
@@ -27,6 +27,7 @@ class Venuedetail extends Component {
         this.setState({
           filters: res.data.data.filters,
           addOns: res.data.data.result.addOns,
+          title: res.data.data.eventName,
         });
       });
   }
@@ -35,21 +36,55 @@ class Venuedetail extends Component {
     return (
       <div className="create_event">
         <div className="header_createevent">
-          <Row style={{ margin: '0px', padding: '0px' }}>
+          <Row style={{ margin: "0px", padding: "0px" }}>
             <Col xs={0} md={1} />
-            <Col xs={12} md={2} >
-              <a href="/eventstan" class="navbar-brand">Event<span className="colored">stan</span></a>
+            <Col xs={12} md={2}>
+              <a href="/eventstan" class="navbar-brand">
+                Event<span className="colored">stan</span>
+              </a>
             </Col>
             <Col xs={0} md={2} />
-            <Col xs={12} md={7} >
-              <div className="create_event_mob1" style={{ display: 'flex', justifyContent: 'center' }}>
-                <div style={{ position: 'relative' }}>
-                  <input style={{ padding: '4px 8px', width: '250px', border: 'none', borderRadius: '8px', paddingRight: '30px' }} type="text" placeholder="Search here.." />
-                  <img style={{ position: 'absolute', right: '3px', height: '20px', top: '10px' }} className="search_icon_top1" src={search_ico} height="50px" />
+            <Col xs={12} md={7}>
+              <div
+                className="create_event_mob1"
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                <div style={{ position: "relative" }}>
+                  <input
+                    style={{
+                      padding: "4px 8px",
+                      width: "250px",
+                      border: "none",
+                      borderRadius: "8px",
+                      paddingRight: "30px",
+                    }}
+                    type="text"
+                    placeholder="Search here.."
+                  />
+                  <img
+                    style={{
+                      position: "absolute",
+                      right: "3px",
+                      height: "20px",
+                      top: "10px",
+                    }}
+                    className="search_icon_top1"
+                    src={search_ico}
+                    height="50px"
+                  />
                 </div>
-                <Button href="/professional" style={{ backgroundColor: "#F47824", marginLeft: '20px' }}>Request for Demo</Button>
-                <Button href="/professional" style={{ backgroundColor: "#F47824", marginLeft: '20px' }}>Menu</Button>
-
+                <Button
+                  href="/professional"
+                  style={{ backgroundColor: "#F47824", marginLeft: "20px" }}
+                >
+                  Request for Demo
+                </Button>
+                <Button
+                  href="/professional"
+                  style={{ backgroundColor: "#F47824", marginLeft: "20px" }}
+                >
+                  Menu
+                </Button>
               </div>
             </Col>
           </Row>
@@ -72,7 +107,7 @@ class Venuedetail extends Component {
             </div> */}
           </div>
           <br />
-          <h3 className="bold_me">25th Birthday</h3>
+          <h3 className="bold_me">{this.state.title}</h3>
           <h6 className="bold_me" style={{ color: "grey" }}>
             Add your favorite Venue, Cater, Decorator etc or You can select
             package also for your event.

@@ -14,7 +14,7 @@ class Venuedetail extends Component {
     this.state = {
       addOns: [],
       filters: [],
-      venues: [],
+      primary: [],
     };
   }
   componentDidMount() {
@@ -28,6 +28,7 @@ class Venuedetail extends Component {
           filters: res.data.data.filters,
           addOns: res.data.data.result.addOns,
           title: res.data.data.eventName,
+          primary: res.data.data.result.primary,
         });
       });
   }
@@ -96,12 +97,12 @@ class Venuedetail extends Component {
             className="filter_buttons"
             style={{ display: "flex", justifyContent: "space-between" }}
           >
-            <div style={{ display: "flex", justifyContent: "space-around" }}>
+            {/* <div style={{ display: "flex", justifyContent: "space-around" }}>
               <Button>All</Button>
               <Button>Private</Button>
               <Button>Corporate</Button>
               <Button>Virtual</Button>
-            </div>
+            </div> */}
             {/* <div>
               <input placeholder="Search here.." type="text" />
             </div> */}
@@ -114,108 +115,28 @@ class Venuedetail extends Component {
           </h6>
           <br />
           <div className="packages">
-            <div className="package_card">
-              <div>
-                <h5
-                  style={{ fontWeight: "bold", fontSize: "20px" }}
-                  className="bold_me"
-                >
-                  Venue
-                </h5>
-                <h6 style={{ color: "rgb(244, 120, 36)" }} className="bold_me">
-                  ADD
-                </h6>
+            {this.state.primary.map((p, i) => (
+              <div className="package_card" key={i}>
+                <div>
+                  <h5
+                    style={{ fontWeight: "bold", fontSize: "20px" }}
+                    className="bold_me"
+                  >
+                    {p.serviceId.name}
+                  </h5>
+                  <h6
+                    style={{ color: "rgb(244, 120, 36)" }}
+                    className="bold_me"
+                  >
+                    ADD
+                  </h6>
+                </div>
+                <div style={{ color: "grey" }}>
+                  <h6 className="bold_me">342 Available</h6>
+                  <h6 className="bold_me">Own Venue</h6>
+                </div>
               </div>
-              <div style={{ color: "grey" }}>
-                <h6 className="bold_me">342 Available</h6>
-                <h6 className="bold_me">Own Venue</h6>
-              </div>
-            </div>
-            <div className="package_card">
-              <div>
-                <h5
-                  style={{ fontWeight: "bold", fontSize: "20px" }}
-                  className="bold_me"
-                >
-                  Venue
-                </h5>
-                <h6 style={{ color: "rgb(244, 120, 36)" }} className="bold_me">
-                  ADD
-                </h6>
-              </div>
-              <div style={{ color: "grey" }}>
-                <h6 className="bold_me">342 Available</h6>
-                <h6 className="bold_me">Own Venue</h6>
-              </div>
-            </div>
-            <div className="package_card">
-              <div>
-                <h5
-                  style={{ fontWeight: "bold", fontSize: "20px" }}
-                  className="bold_me"
-                >
-                  Venue
-                </h5>
-                <h6 style={{ color: "rgb(244, 120, 36)" }} className="bold_me">
-                  ADD
-                </h6>
-              </div>
-              <div style={{ color: "grey" }}>
-                <h6 className="bold_me">342 Available</h6>
-                <h6 className="bold_me">Own Venue</h6>
-              </div>
-            </div>
-            <div className="package_card">
-              <div>
-                <h5
-                  style={{ fontWeight: "bold", fontSize: "20px" }}
-                  className="bold_me"
-                >
-                  Venue
-                </h5>
-                <h6 style={{ color: "rgb(244, 120, 36)" }} className="bold_me">
-                  ADD
-                </h6>
-              </div>
-              <div style={{ color: "grey" }}>
-                <h6 className="bold_me">342 Available</h6>
-                <h6 className="bold_me">Own Venue</h6>
-              </div>
-            </div>
-            <div className="package_card">
-              <div>
-                <h5
-                  style={{ fontWeight: "bold", fontSize: "20px" }}
-                  className="bold_me"
-                >
-                  Venue
-                </h5>
-                <h6 style={{ color: "rgb(244, 120, 36)" }} className="bold_me">
-                  ADD
-                </h6>
-              </div>
-              <div style={{ color: "grey" }}>
-                <h6 className="bold_me">342 Available</h6>
-                <h6 className="bold_me">Own Venue</h6>
-              </div>
-            </div>
-            <div className="package_card">
-              <div>
-                <h5
-                  style={{ fontWeight: "bold", fontSize: "20px" }}
-                  className="bold_me"
-                >
-                  Venue
-                </h5>
-                <h6 style={{ color: "rgb(244, 120, 36)" }} className="bold_me">
-                  ADD
-                </h6>
-              </div>
-              <div style={{ color: "grey" }}>
-                <h6 className="bold_me">342 Available</h6>
-                <h6 className="bold_me">Own Venue</h6>
-              </div>
-            </div>
+            ))}
           </div>
           <br />
           <h5
@@ -227,6 +148,31 @@ class Venuedetail extends Component {
           >
             Add-Ons
           </h5>
+          <br />
+          <div className="packages">
+            {this.state.addOns.map((addOn, i) => (
+              <div className="package_card" key={i}>
+                <div>
+                  <h5
+                    style={{ fontWeight: "bold", fontSize: "20px" }}
+                    className="bold_me"
+                  >
+                    {addOn.serviceId.name}
+                  </h5>
+                  <h6
+                    style={{ color: "rgb(244, 120, 36)" }}
+                    className="bold_me"
+                  >
+                    ADD
+                  </h6>
+                </div>
+                <div style={{ color: "grey" }}>
+                  <h6 className="bold_me">342 Available</h6>
+                  <h6 className="bold_me">Own Venue</h6>
+                </div>
+              </div>
+            ))}
+          </div>
           <div style={{ margin: "100px 0px", textAlign: "center" }}>
             <Button
               style={{

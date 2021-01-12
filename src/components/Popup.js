@@ -340,7 +340,16 @@ const Popup = ({ title, target_event_id }) => {
             {filter.type === 8 && (
               <Col md={6} style={{ marginTop: 10 }} key={i}>
                 <h6>{filter.name}</h6>
-                <Button onClick={() => addAddress(i, 8)}>Add More</Button>
+                <Button
+                  onClick={() => addAddress(i, 8)}
+                  style={{
+                    color: "black",
+                    backgroundColor: "#d0d0d0",
+                  }}
+                >
+                  +
+                </Button>
+                <br />
                 {form.filters[i].location.map((l, ind) => (
                   <input
                     style={{ marginTop: "10px" }}
@@ -357,7 +366,11 @@ const Popup = ({ title, target_event_id }) => {
       </Row>
       <Row style={{ margin: 0 }}>
         <Button
-          style={{ margin: "15px auto", backgroundColor: "lightslategray" }}
+          style={{
+            margin: "15px auto",
+            backgroundColor: "#d0d0d0",
+            color: "black",
+          }}
           onClick={createEvent}
         >
           Lets Create an Event

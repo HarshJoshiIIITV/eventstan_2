@@ -16,7 +16,7 @@ class Name_popup extends Component {
                   outline: "none",
                   marginTop: "10px",
                   marginBottom: "10px",
-                  border: "2px solid rgb(244, 120, 36)",
+                  border: "2px solid #d0d0d0",
                   padding: "6px",
                   borderRadius: "8px",
                   width: "100%",
@@ -37,8 +37,9 @@ class Name_popup extends Component {
             onClick={this.props.submit_popup_first}
             style={{
               margin: "15px auto",
-              backgroundColor: "rgb(244, 120, 36)",
+              backgroundColor: "#d0d0d0",
               padding: "8px 50px",
+              color: "black",
             }}
           >
             Submit

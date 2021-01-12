@@ -20,6 +20,7 @@ class Createevent extends Component {
       target_event_id: null,
       search_input: "",
       error: "",
+      activeFilter: "All",
     };
   }
   componentDidMount() {
@@ -101,6 +102,35 @@ class Createevent extends Component {
     });
   };
 
+  filterOutEvents = (s, id = null) => {
+    this.setState({
+      activeFilter: s,
+    });
+    if (id) {
+      axios
+        .get(`https://api.eventstan.com/user/event-types?eventCategoryId=${id}`)
+        .then((resp) => {
+          this.setState({
+            event_types: resp.data.data.result,
+          });
+        })
+        .catch((err) => {
+          console.log("error");
+        });
+    } else {
+      axios
+        .get(`https://api.eventstan.com/user/event-types`)
+        .then((resp) => {
+          this.setState({
+            event_types: resp.data.data.result,
+          });
+        })
+        .catch((err) => {
+          console.log("error");
+        });
+    }
+  };
+
   render() {
     let backdrop;
     if (this.state.popup || this.state.popup_first) {
@@ -170,10 +200,33 @@ class Createevent extends Component {
             style={{ display: "flex", justifyContent: "space-between" }}
           >
             <div style={{ display: "flex", justifyContent: "space-around" }}>
-              <Button>All</Button>
+              <Button
+                style={{
+                  backgroundColor:
+                    this.state.activeFilter === "All" ? "#8489b2" : "gray",
+                }}
+                onClick={(e) => this.filterOutEvents("All")}
+              >
+                All
+              </Button>
               {this.state.filters &&
                 this.state.filters.map((filter, i) => {
-                  return <Button key={i}>{filter.name}</Button>;
+                  return (
+                    <Button
+                      key={i}
+                      style={{
+                        backgroundColor:
+                          this.state.activeFilter === filter.name
+                            ? "#8489b2"
+                            : "gray",
+                      }}
+                      onClick={(e) =>
+                        this.filterOutEvents(filter.name, filter._id)
+                      }
+                    >
+                      {filter.name}
+                    </Button>
+                  );
                 })}
             </div>
             <div style={{ position: "relative" }}>

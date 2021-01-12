@@ -8,7 +8,7 @@
 
 .filter_buttons Button {
   margin-right: 10px;
-  background-color: #8489b2;
+  background-color: gray;
 }
 .popup {
   position: fixed;
